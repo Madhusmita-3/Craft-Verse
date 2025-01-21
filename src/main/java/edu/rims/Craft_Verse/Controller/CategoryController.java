@@ -1,4 +1,4 @@
-package edu.rims.Craft_Verse;
+package edu.rims.Craft_Verse.Controller;
 
 public class CategoryController {
     
