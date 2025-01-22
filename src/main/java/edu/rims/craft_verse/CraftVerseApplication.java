@@ -1,4 +1,4 @@
-package edu.rims.Craft_Verse;
+package edu.rims.craft_verse;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
