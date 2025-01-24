@@ -79,7 +79,7 @@ nav a:hover {
     font-size: 2em;
     margin-bottom: 20px;
     color: transparent;
-    background: linear-gradient(to right, rgb(207, 105, 122), black);
+    background: linear-gradient(to right, rgb(233, 183, 189), black);
     -webkit-background-clip: text;
     background-clip: text;
 }
