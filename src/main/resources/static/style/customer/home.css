@@ -10,6 +10,10 @@ header {
 header .logo {
     font-size: 1.8em;
     font-weight: bold;
+    color: transparent;
+    background: linear-gradient(to right,rgb(105, 59, 97), black);
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 header .search-bar {
@@ -74,6 +78,10 @@ nav a:hover {
 .hero h1 {
     font-size: 2em;
     margin-bottom: 20px;
+    color: transparent;
+    background: linear-gradient(to right, rgb(207, 105, 122), black);
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .hero p {
