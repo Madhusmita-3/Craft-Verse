@@ -18,7 +18,8 @@ body {
     margin: 0;
 
 }
-body::-webkit-scrollbar{
+
+body::-webkit-scrollbar {
     display: none;
 }
 
@@ -39,7 +40,7 @@ header .logo {
 header .search-bar {
     display: flex;
     align-items: center;
-    
+
 
 }
 
@@ -130,9 +131,10 @@ nav a:hover {
     margin-bottom: 30px;
     height: 200rem;
 }
-.left-column img{
+
+.left-column img {
     height: 100%;
-    width:830px;
+    width: 830px;
 }
 
 .hero .middle {
@@ -160,21 +162,21 @@ nav a:hover {
     /* Light pink */
     /* border: 2px solid #f06292; */
     /* Coral pink */
-   
+
     overflow: hidden;
 
 }
 
 /* browse section */
-#browse-sec{
+#browse-sec {
     width: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-block:3rem;
+    margin-block: 3rem;
 
-    h1{
+    h1 {
         font-size: 2.5rem;
         color: rgb(0, 0, 0);
         text-shadow: 1px 1px 2.5px rgb(63, 0, 63);
@@ -183,7 +185,7 @@ nav a:hover {
 
 
 .container {
-    
+
     width: 100%;
     border: 0px solid peachpuff;
     display: flex;
@@ -206,7 +208,7 @@ nav a:hover {
     padding: 13px;
     border-radius: 120px;
     transition: all 5s;
-    
+
     #i-2 {
         opacity: 0;
     }
@@ -218,14 +220,14 @@ nav a:hover {
     position: relative;
 }
 
- .item p{
+.item p {
     margin-top: 208px;
     margin-left: 90px;
     font-size: 20px;
     color: black;
     text-align: center;
-    width: 120px; 
- }
+    width: 120px;
+}
 
 .item img {
     width: 200px;
@@ -255,7 +257,7 @@ nav a:hover {
 
 .items {
     width: 100%;
-    
+
     /* background-color: #d3aeae; */
     border: 0px;
     margin: 7rem;
@@ -271,12 +273,12 @@ nav a:hover {
 
     position: relative;
 }
-   
+
 
 
 /* planner-calender */
 
-#planner-calender{
+#planner-calender {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -284,7 +286,7 @@ nav a:hover {
     align-items: center;
     text-align: center;
 
-    h2{
+    h2 {
         font-size: 2.5rem;
         color: rgb(0, 0, 0);
         text-shadow: 1px 1px 2.5px rgb(63, 0, 63);
@@ -292,20 +294,21 @@ nav a:hover {
     }
 }
 
-#planner-calender .items{
+#planner-calender .items {
     margin: auto;
 }
 
-#planner-calender .items img{
+#planner-calender .items img {
     border-radius: 50px 0 50px 0;
     width: 100rem;
     height: auto;
     transition: all .5s;
 }
 
-#planner-calender .items img:hover{
+#planner-calender .items img:hover {
     border-radius: 0px 50px 0px 50px;
 }
+
 /* section h2 {
     font-size: 1.8em;
     margin-bottom: 20px;
@@ -322,7 +325,7 @@ nav a:hover {
 
 /* Aesthetic-journaling */
 
-#Aesthetic-journaling{
+#Aesthetic-journaling {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -331,7 +334,7 @@ nav a:hover {
     text-align: center;
     margin-block: 3rem;
 
-    h2{
+    h2 {
         font-size: 2.5rem;
         color: rgb(0, 0, 0);
         text-shadow: 1px 1px 2.5px rgb(63, 0, 63);
@@ -355,7 +358,7 @@ nav a:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     transition: transform 0.3s, box-shadow 0.3s;
-    
+
     width: 100%;
 
 }
@@ -371,11 +374,11 @@ nav a:hover {
     /* object-fit: cover; */
     /* margin-bottom: 10px;*/
     border-radius: 5px;
-    border: 1px solid #ec407a; 
+    border: 1px solid #ec407a;
 
 }
 
-.product > p {
+.product>p {
     margin: 20px 0;
     font-size: larger;
     color: #333;
@@ -424,18 +427,19 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; 
-h2{
-    font-size: 2.5rem;
-    color: rgb(0, 0, 0);
-    text-shadow: 1px 1px 2.5px rgb(63, 0, 63);
+    min-height: 100vh;
 
-}
+    h2 {
+        font-size: 2.5rem;
+        color: rgb(0, 0, 0);
+        text-shadow: 1px 1px 2.5px rgb(63, 0, 63);
+
+    }
 }
 
-#Personlized{
+#Personlized {
     display: flex;
-    gap: 2rem; 
+    gap: 2rem;
 }
 
 
