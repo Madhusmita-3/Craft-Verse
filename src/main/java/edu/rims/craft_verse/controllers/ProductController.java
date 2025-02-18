@@ -15,6 +15,25 @@ public class ProductController {
         return "customer/home";
     }
     
+<<<<<<< HEAD
+=======
+    @GetMapping("/plp")
+    String customerPlp() {
+        return "customer/plp";
+    }
+    @GetMapping("/pdp")
+    String customerPdp() {
+        return "customer/pdp";
+    }
+    @GetMapping("/signup")
+    String customerSignup() {
+        return "customer/signup";
+    }
+    @GetMapping("/login")
+    String customerLogin() {
+        return "customer/login";
+    }
+>>>>>>> home-page
     
     
 }
