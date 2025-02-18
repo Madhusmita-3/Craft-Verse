@@ -1,0 +1,424 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  /* .upper-part {
+    flex: 1;
+    background-color: #df3f2e;
+  } */
+  
+  .lower-part {
+    flex: 1;
+    display: flex;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  .header input {
+    width: 50%;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .icons span {
+    margin-left: 15px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    background-color: #444;
+    padding: 10px;
+    margin: 0;
+    overflow-x: auto;
+  }
+  
+  nav ul li {
+    margin-right: 15px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  
+ /* .banner {
+    text-align: center;
+    background-color: #ece5e6;
+    padding: 30px 0;
+    font-size: 18px;
+    
+  }  */
+
+/* Banner Styling */
+.banner {
+  width: 100vw; /* Full screen width */
+  height: 50vh; /* Full screen height */
+  background: url('/images/plpban.png') no-repeat center center;
+  background-size: cover; /* Ensures full coverage */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white; /* Adjust text color for visibility */
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+}
+
+
+  
+  .filters {
+    grid: 1px;
+    padding: 5px;
+    background-color: #a78696;
+    border-right: 1px solid #d4c7c7;
+  }
+  .sort-container {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-container select {
+    font-size: 16px;
+    padding: 8px 10px;
+    border: 2px solid #5a2a3c; /* Dark pink border */
+    border-radius: 6px;
+    background-color: #f5d1e0; /* Light pink background */
+    color: #333;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Change color when hovered */
+.sort-container select:hover {
+    background-color: #f0b7c9; /* Slightly darker pink */
+}
+
+/* Style dropdown arrow */
+.sort-container select:focus {
+    border-color: #a02b50;
+}
+.availability-container {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  background-color: #f4e1eb; /* Light pink background */
+  padding: 12px;
+  border-radius: 8px;
+  width: 220px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+/* Hover effect */
+.availability-container:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow for depth */
+  background-color: #f1d7e2; /* Slightly darker pink */
+}
+
+.availability-container h3 {
+  margin-bottom: 10px;
+  color: #5a2a3c; /* Dark pink text */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Custom checkbox */
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  color: #333;
+  transition: 0.3s;
+}
+
+.custom-checkbox input {
+  display: none; /* Hide default checkbox */
+}
+
+.custom-checkbox .checkmark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #a02b50; /* Pink border */
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Checkbox checked state */
+.custom-checkbox input:checked + .checkmark {
+  background-color: #a02b50;
+  border-color: #a02b50;
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+  content: "✔";
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  left: 3px;
+  top: -1px;
+}
+
+/* Hover effect */
+.custom-checkbox:hover {
+  color: #a02b50;
+}
+
+.custom-checkbox .count {
+  font-size: 14px;
+  color: #666;
+}
+
+.price-filter {
+  font-family: Arial, sans-serif;
+  margin: 25px 0;
+}
+
+.price-filter label {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.price-inputs {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.price-inputs input {
+  width: 60px;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+ 
+  input[type="checkbox"] {
+    accent-color: #e91e63; /* Example: a pink shade */
+  } 
+
+  h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.brand-option {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #130202;
+}
+
+.brand-option input {
+    margin-right: 8px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+   .review{
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #f4e1eb; /* Light pink background */
+    padding: 12px;
+    /* padding: 15px;
+    border-radius: 10px;
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    width: 250px;
+    margin: auto; */
+}
+h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.radio-label input {
+    margin-right: 8px;
+}
+
+.stars {
+    font-size: 16px;
+    color: #f5a225;
+}
+
+.all-text {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Custom Radio Button */
+.radio-label input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #3955f7;
+    border-radius: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"]:checked::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #925d21;
+    border-radius: 70%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+  
+  .filters div {
+    margin-bottom: 20px;
+  }
+  .products {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 10px;
+  }
+  
+  .product {
+    background-color: rgb(128, 20, 86);
+    padding: 100px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius:5px;
+  } 
+
+  .product-container {
+    width: 250px; /* Set fixed width */
+    height: 350px; /* Set fixed height */
+    overflow: hidden; /* Hide overflow content */
+    text-align: center; /* Center align text */
+    border: 2px solid #ecd7d7; /* Optional: Add border */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.product-container:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.product-container img {
+    width: 100%; /* Make the image fit within the container */
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensures image scales properly */
+}
+
+.product-title {
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds "..." if text overflows */
+}
+
+.product-price {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+.add-to-cart {
+  width: 100%;
+  background-color: #e0abc1; /* Yellow background */
+  color: #000; /* Black text */
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 12px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #efb6cb; /* Darker yellow on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+.pagination {
+  display: flex;
+  justify-content: center; /* Centers pagination */
+  align-items: center; /* Aligns vertically */
+  margin-top: 20px;
+  gap: 10px; /* Space between items */
+}
+
+.page-number, .prev, .next {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+}
+
+.prev, .next {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.prev:hover, .next:hover {
+  background-color: #eb7f7f;
+}
+
+
+
+   /* .products {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .product {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }  */
