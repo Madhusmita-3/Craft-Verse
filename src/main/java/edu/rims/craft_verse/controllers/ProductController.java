@@ -25,5 +25,32 @@ public class ProductController {
         List<Category> categories = categoryRepository.findAll();
         model.addAttribute("categories",categories);
         return "customer/home";
+<<<<<<< HEAD
     }   
 }
+=======
+    }
+    
+<<<<<<< HEAD
+=======
+    @GetMapping("/plp")
+    String customerPlp() {
+        return "customer/plp";
+    }
+    @GetMapping("/pdp")
+    String customerPdp() {
+        return "customer/pdp";
+    }
+    @GetMapping("/signup")
+    String customerSignup() {
+        return "customer/signup";
+    }
+    @GetMapping("/login")
+    String customerLogin() {
+        return "customer/login";
+    }
+>>>>>>> home-page
+    
+    
+}
+>>>>>>> 8ba522a3a45362753363c2ddadf09abb9688796f
