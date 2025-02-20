@@ -1,5 +1,7 @@
 package edu.rims.craft_verse.entity;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,7 +32,7 @@ public class Product extends Auditable {
     private int productStockQuantity = 0;
 
     @ManyToOne
-    @JoinColumn(name = "category_id", referencedColumnName = "category_id", nullable = true)
+    @JoinColumn(name = "category_id", nullable = true)
     private Category category;
 
     @Column(name = "product_tags", columnDefinition = "TEXT")
@@ -44,4 +46,13 @@ public class Product extends Auditable {
 
     @Column(name = "product_likes", columnDefinition = "INT DEFAULT 0")
     private int productLikes = 0;
+
+    @OneToMany(mappedBy = "product")
+    private List<OrderItem> orderItems;
+
+    @OneToMany(mappedBy = "product")
+    private List<Review> reviews;
+
+    @OneToMany(mappedBy = "product")
+    private List<Wishlist> wishlists;
 }

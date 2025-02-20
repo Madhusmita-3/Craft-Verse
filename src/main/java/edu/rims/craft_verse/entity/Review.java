@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-
-
 import edu.rims.craft_verse.constant.ReviewStatus;
 
 @Entity
@@ -13,25 +11,25 @@ import edu.rims.craft_verse.constant.ReviewStatus;
 @Setter
 @Getter
 public class Review extends Auditable {
-    
+
     @Id
     @Column(name = "review_id", length = 255, nullable = false)
     private String reviewId;
-    
+
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     private User user;
-    
+
     @ManyToOne
-    @JoinColumn(name = "product_id", referencedColumnName = "product_id", nullable = false)
+    @JoinColumn(name = "product_id", nullable = false)
     private Product product;
-    
-    @Column(name = "rating", precision = 3, scale = 2, nullable = false)
-    private Double rating;
-    
+
+    @Column(name = "rating")
+    private double rating;
+
     @Column(name = "review_description", columnDefinition = "TEXT")
     private String reviewDescription;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "review_status", nullable = false)
     private ReviewStatus reviewStatus = ReviewStatus.PENDING;

@@ -1,5 +1,7 @@
 package edu.rims.craft_verse.entity;
 
+import java.util.List;
+
 import edu.rims.craft_verse.constant.CategoryStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -33,4 +35,6 @@ public class Category extends Auditable {
     @Column(name = "category_status", columnDefinition = "ENUM('ACTIVE', 'INACTIVE') DEFAULT 'ACTIVE'")
     private CategoryStatus categoryStatus = CategoryStatus.ACTIVE;
 
+    @OneToMany(mappedBy = "category")
+    private List<Product> products;
 }

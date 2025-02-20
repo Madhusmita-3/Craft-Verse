@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import edu.rims.craft_verse.constant.PaymentMethod;
@@ -39,8 +38,8 @@ public class Payment extends Auditable {
     @Column(name = "transaction_id", unique = true)
     private String transactionId;
 
-    @Column(name = "amount", nullable = false, precision = 10, scale = 2)
-    private BigDecimal amount;
+    @Column(name = "amount", nullable = false)
+    private double amount;
 
     @Column(name = "currency", nullable = false, length = 10)
     private String currency = "USD";

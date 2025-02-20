@@ -1,10 +1,11 @@
 package edu.rims.craft_verse.entity;
 
+import java.util.List;
+
 import edu.rims.craft_verse.constant.UserStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
 
 @Entity
 @Table(name = "user")
@@ -13,7 +14,7 @@ import lombok.Setter;
 public class User extends Auditable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "user_id", nullable = false, length = 255)
     private String userId;
 
@@ -36,7 +37,18 @@ public class User extends Auditable {
     private String userProfilePicture;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "user_status", columnDefinition = "ENUM('ACTIVE', 'INACTIVE', BANNED) DEFAULT 'ACTIVE'")
+    @Column(name = "user_status", columnDefinition = "ENUM('ACTIVE', 'INACTIVE','BANNED') DEFAULT 'ACTIVE'")
     private UserStatus userStatus = UserStatus.ACTIVE;
-}
 
+    @OneToMany(mappedBy = "user")
+    private List<Payment> payments;
+
+    @OneToMany(mappedBy = "user")
+    private List<Review> reviews;
+
+    @OneToMany(mappedBy = "user")
+    private List<Wishlist> wishlists;
+
+    @OneToMany(mappedBy = "user")
+    private List<ProductOrder> productOrders;
+}
