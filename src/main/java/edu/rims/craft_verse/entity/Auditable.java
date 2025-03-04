@@ -6,16 +6,18 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 @Setter
 @Getter
 @MappedSuperclass
 public class Auditable {
 
     @Column(name = "created_date", updatable = false)
-    private Timestamp createdDate;
+    private LocalDateTime createdDate;
 
     @Column(name = "updated_date")
-    private Timestamp updatedDate;
+    private LocalDateTime updatedDate;
 
     @Column(name = "created_by", length = 50)
     private String createdBy;
@@ -23,7 +25,4 @@ public class Auditable {
     @Column(name = "updated_by", length = 50)
     private String updatedBy;
 
-    
-    }
-
-    
+}

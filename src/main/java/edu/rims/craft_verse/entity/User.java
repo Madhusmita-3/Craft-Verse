@@ -14,9 +14,9 @@ import lombok.Setter;
 public class User extends Auditable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id", nullable = false, length = 255)
-    private String userId;
+    private Integer userId;
 
     @Column(name = "user_name", nullable = false, length = 255)
     private String userName;

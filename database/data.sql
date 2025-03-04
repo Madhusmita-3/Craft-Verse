@@ -1,19 +1,39 @@
-INSERT INTO category (category_id, category_title, category_description, category_image_url, category_status, created_by, updated_by) 
+INSERT INTO category (category_id, category_title, category_description, category_image_url, category_status, created_by, updated_by)
 VALUES 
-(UUID(), 'Electronics', 'Devices and gadgets', 'https://example.com/images/electronics.jpg', 'ACTIVE', 'admin', 'admin');
+(UUID(), 'Resin Art', 'Beautiful resin-based artworks and craft kits', 'https://example.com/images/resin_art.jpg', 'ACTIVE', 'admin', 'admin');
 
-INSERT INTO category (category_id, category_title, category_description, category_image_url, category_status, created_by, updated_by) 
+INSERT INTO category (category_id, category_title, category_description, category_image_url, category_status, created_by, updated_by)
 VALUES 
-(UUID(), 'Fashion', 'Clothing and accessories', 'https://example.com/images/fashion.jpg', 'ACTIVE', 'admin', 'admin');
+(UUID(), 'DIY Kit', 'Do-it-yourself kits for crafting and creative projects', 'https://example.com/images/diy_kit.jpg', 'ACTIVE', 'admin', 'admin');
 
-INSERT INTO category (category_id, category_title, category_description, category_image_url, category_status, created_by, updated_by) 
+INSERT INTO category (category_id, category_title, category_description, category_image_url, category_status, created_by, updated_by)
 VALUES 
-(UUID(), 'Books', 'Fiction, Non-fiction, and Educational books', 'https://example.com/images/books.jpg', 'ACTIVE', 'admin', 'admin');
+(UUID(), 'School Kit', 'Complete school supplies and stationery essentials', 'https://example.com/images/school_kit.jpg', 'ACTIVE', 'admin', 'admin');
 
-INSERT INTO category (category_id, category_title, category_description, category_image_url, category_status, created_by, updated_by) 
+INSERT INTO category (category_id, category_title, category_description, category_image_url, category_status, created_by, updated_by)
 VALUES 
-(UUID(), 'Home Appliances', 'Kitchen and household items', 'https://example.com/images/home_appliances.jpg', 'INACTIVE', 'admin', 'admin');
+(UUID(), 'Sculpture', 'Sculpting materials and tools for artists', 'https://example.com/images/sculpture.jpg', 'ACTIVE', 'admin', 'admin');
 
-INSERT INTO category (category_id, category_title, category_description, category_image_url, category_status, created_by, updated_by) 
+INSERT INTO category (category_id, category_title, category_description, category_image_url, category_status, created_by, updated_by)
 VALUES 
-(UUID(), 'Sports', 'Outdoor and indoor sports equipment', 'https://example.com/images/sports.jpg', 'ACTIVE', 'admin', 'admin');
+(UUID(), 'Paper Tool', 'Paper crafting tools including cutters, scissors, and punches', 'https://example.com/images/paper_tool.jpg', 'ACTIVE', 'admin', 'admin');
+
+INSERT INTO category (category_id, category_title, category_description, category_image_url, category_status, created_by, updated_by)
+VALUES 
+(UUID(), 'Mandala Art', 'Mandala design kits and tools for intricate artwork', 'https://example.com/images/mandala_art.jpg', 'ACTIVE', 'admin', 'admin');
+
+INSERT INTO category (category_id, category_title, category_description, category_image_url, category_status, created_by, updated_by)
+VALUES 
+(UUID(), 'Art Paints', 'A variety of paints for professional and hobby artists', 'https://example.com/images/art_paints.jpg', 'ACTIVE', 'admin', 'admin');
+
+INSERT INTO category (category_id, category_title, category_description, category_image_url, category_status, created_by, updated_by)
+VALUES 
+(UUID(), 'Canvas', 'Canvas boards and sheets for painting and artwork', 'https://example.com/images/canvas.jpg', 'ACTIVE', 'admin', 'admin');
+
+INSERT INTO category (category_id, category_title, category_description, category_image_url, category_status, created_by, updated_by)
+VALUES 
+(UUID(), 'Office Supply', 'Office stationery and essential supplies', 'https://example.com/images/office_supply.jpg', 'ACTIVE', 'admin', 'admin');
+
+INSERT INTO category (category_id, category_title, category_description, category_image_url, category_status, created_by, updated_by)
+VALUES 
+(UUID(), 'Desk Essential', 'Must-have desk accessories for work and study', 'https://example.com/images/desk_essential.jpg', 'ACTIVE', 'admin', 'admin');

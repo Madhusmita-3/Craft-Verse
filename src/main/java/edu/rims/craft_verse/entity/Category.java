@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 
 public class Category extends Auditable {
-   
+
     @Id
     @Column(name = "category_id", nullable = false, length = 255)
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -27,7 +27,7 @@ public class Category extends Auditable {
 
     @Column(name = "category_image_url", length = 255)
     private String categoryImageUrl;
-    
+
     @Column(name = "category_hover_image_url", length = 255)
     private String categoryHoverImageUrl;
 
