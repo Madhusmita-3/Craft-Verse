@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Rotating Login & Signup Form</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="/style/customer/login.css" />
+
+    <input type="radio" id="chkl" name="a1" style="display: none" />
+    <input type="radio" id="chk2" name="a1" style="display: none" />
+    <div class="box">
+      <!-- First Page (Main Landing) -->
+      <div class="a">
+        <label for="chkl">SIGN UP</label>
+        <label for="chk2" id="sup">LOGIN</label>
+      </div>
+      <!-- Signup Page -->
+      <div class="b">
+        <form action="/customer/sign-up" class="frm" method="post">
+          <h2 class="title">SIGN UP</h2>
+          <input
+            type="text"
+            name="userName"
+            placeholder="Enter Full Name"
+            required
+          />
+
+          <input
+            type="email"
+            name="userEmail"
+            placeholder="Enter Email Address"
+            required
+          />
+
+          <input
+            type="tel"
+            name="userPhoneNumber"
+            placeholder="Phone Number"
+            required
+          />
+          <input
+            type="text"
+            name="userAddress"
+            placeholder="Address"
+            required
+          />
+          <input
+            type="password"
+            name="userPassword"
+            placeholder="Enter Password"
+            required
+          />
+
+          <input type="submit" value="SIGN UP" id="btn" />
+          <label for="chk2" id="btm">LOGIN HERE</label>
+        </form>
+      </div>
+
+      <!-- Login Page -->
+      <div class="c">
+        <form action="" class="frm">
+          <h2 class="title">LOGIN</h2>
+          <input type="text" placeholder="Username or Email" required />
+          <input type="password" placeholder="Enter Password" required />
+          <input type="submit" value="LOGIN" id="btn" />
+          <label for="chkl" id="btm">SIGN UP HERE</label>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
