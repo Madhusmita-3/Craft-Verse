@@ -1,5 +1,5 @@
 package edu.rims.craft_verse.controllers;
 
-public class CategoryController {
-    
+public class AdminController {
+
 }

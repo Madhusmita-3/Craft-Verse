@@ -10,4 +10,4 @@ public class CraftVerseApplication {
 		SpringApplication.run(CraftVerseApplication.class, args);
 	}
 
-}
+} 

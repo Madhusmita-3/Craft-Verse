@@ -1,196 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head data-th-replace="~{customer/fragment/common :: head}"></head>
 
-<head data-th-replace="~{customer/fragment/common :: head}"></head>
-
-<body>
-
-    <link rel="stylesheet" href="/style/customer/home.css">
+  <body>
+    <link rel="stylesheet" href="/style/customer/home.css" />
 
     <header data-th-replace="~{customer/fragment/common :: header}"></header>
     <nav data-th-replace="~{customer/fragment/common :: nav}"></nav>
     <div class="hero">
-        <div class="left-column">
-            <img src="/images/Art sales.png">
-        </div>
-        <div class="middle">
-            <video src="/vid/home1.mp4" width="100%" autoplay muted loop controls></video>
-
-        </div>
-
+      <div class="left-column">
+        <img src="/images/Art sales.png" />
+      </div>
+      <div class="middle">
+        <video
+          src="/vid/home1.mp4"
+          width="100%"
+          autoplay
+          muted
+          loop
+          controls
+        ></video>
+      </div>
     </div>
     <section id="browse-sec">
-        <h1>BROWSER BY CATEGORIES </h1>
-        <div class="container">
-            <div class="item" id="item-">
-                <img src="/images/resin34.jpg" alt="Resins" id="i-1">
-                <img src="/images/res333.jpg" alt="resin" id="i-2">
-                <p>RESIN ART</p>
-            </div>
-            <div class="item" id="item-"><img src="/images/diy.jpg" alt="diy kit">
-                <p>DIY KIT</p>
-            </div>
-            <div class="item" id="item-3"><img src="/images/stationary.jpg" alt="stationarygift">
-                <p>SCHOOL KIT</p>
-            </div>
-            <div class="item" id="item-4">
-                <img src="/images/Sculpture.jpg" alt="Sculpture Painting" id="i-1">
-                <img src="/images/sc paint.jpg" alt="resin" id="i-2">
-                <p>SCULPTURE </p>
-            </div>
-            <div class="item" id="item-5"><img src="/images/papertool.jpg" alt="Paper tool">
-                <P>PAPER TOOL</P>
-            </div>
-            <div class="item" id="item-6">
-                <img src="/images/Mandala Art.jpg" alt="Paper tool" id="i-1">
-                <img src="/images/mandala3.jpg" alt="resin" id="i-2">
-                <P>MANDALA ART</P>
-            </div>
-            <div class="item" id="item-7"><img src="/images/paint.jpg" alt="Art paints">
-                <P> ART PAINTS</P>
-            </div>
-            <div class="item" id="item-8"><img src="/images/canvass.jpg" alt="Canvas">
-                <P>CANVAS</P>
-            </div>
-            <div class="item" id="item-9"><img src="/images/office.jpg" alt="Office Supplies">
-                <P> OFFICE SUPPLIES</P>
-            </div>
-            <div class="item" id="item-10"><img src="/images/desk.jpg" alt="Desk Essential">
-                <P>DESK ESSENTIAL</P>
-            </div>
+      <h1>BROWSER BY CATEGORIES</h1>
+      <div class="container">
+        <div class="item" id="item-" data-th-each="category : ${categories}">
+          <a href="/customer/plp">
+            <img src="/images/resins.jpg" alt="Resins" id="i-1" />
+            <img src="/images/resin photo.jpg" alt="resin" id="i-2" />
+            <p data-th-text="${category.categoryTitle}"></p>
+          </a>
         </div>
+      </div>
     </section>
     <section id="planner-calender">
-        <h2> 2025 Planner and Calender</h2>
-        <div class="box">
-            <div class="items" id="items-2">
-                <img src="/images/diary1234.jpg" alt="Diary" id="i-1">
-                <img src="/images/resin photo.jpg" alt="Diary" id="i-2">
-
-            </div>
-            <div class="items" id="items-3"><img src="/images/luckdiary.jpg" alt=" Luck Diary"></div>
-            <div class="items" id="items-4"><img src="/images/calender.jpg" alt=" Calender"> </div>
-            <div class="items" id="items-5"><img src="/images/calenderss.jpg" alt=" Calender"> </div>
+      <h2>2025 Planner and Calender</h2>
+      <div class="box">
+        <div class="items" id="items-2">
+          <img src="/images/diary1234.jpg" alt="Diary" id="i-1" />
+          <img src="/images/resin photo.jpg" alt="Diary" id="i-2" />
         </div>
+        <div class="items" id="items-3">
+          <img src="/images/luckdiary.jpg" alt=" Luck Diary" />
+        </div>
+        <div class="items" id="items-4">
+          <img src="/images/calender.jpg" alt=" Calender" />
+        </div>
+        <div class="items" id="items-5">
+          <img src="/images/calenderss.jpg" alt=" Calender" />
+        </div>
+      </div>
     </section>
 
     <section id="Aesthetic-journaling">
-        <h2>Aesthetic Journaling Items</h2>
-        <div class="product-grid">
-            <div class="product">
-                <img src="/images/diary.jpg">
-                <p>Sticky Notes</p>
-            </div>
-            <div class="product">
-                <img src="/images/stickers.jpg">
-                <p>Stickers</p>
-            </div>
-            <div class="product">
-                <img src="/images/highliters.jpg">
-                <p>Highlighters</p>
-            </div>
-            <div class="product">
-                <img src="/images/washitape.jpg">
-                <p>Washi Tapes</p>
-            </div>
-            <div class="product">
-                <img src="/images/marker.jpg">
-                <p>Markers</p>
-            </div>
+      <h2>Aesthetic Journaling Items</h2>
+      <div class="product-grid">
+        <div class="product">
+          <img src="/images/diary.jpg" />
+          <p>Sticky Notes</p>
         </div>
-        <h2>Products You'll Love</h2>
-        <div class="product-grid">
-            <div class="product">
-                <img src="/images/handmadeflower.jpg">
-                <p>Handmade Flowers</p>
-            </div>
-            <div class="product">
-                <img src="/images/brush.jpg">
-                <p>Brushes</p>
-            </div>
-            <div class="product">
-                <img src="/images/clock.jpg">
-                <p>Clock</p>
-            </div>
-            <div class="product">
-                <img src="/images/lippan art.jpg">
-                <p>Lippan Art</p>
-            </div>
-            <div class="product">
-                <img src="/images/wall mirror1.jpg">
-                <p>Premarked Wall Mirror</p>
-            </div>
+        <div class="product">
+          <img src="/images/stickers.jpg" />
+          <p>Stickers</p>
         </div>
-        <h2>Our Latest Collection</h2>
-        <div class="product-grid">
-            <div class="product">
-                <img src="/images/jali jharokha.jpg">
-                <p>jali jharokha</p>
-            </div>
-            <div class="product">
-                <img src="/images/wall mirror1.jpg">
-                <p>Premarked Wall Mirror</p>
-            </div>
-            <div class="product">
-                <img src="/images/wallplates.jpg">
-                <p>Wall Plates</p>
-            </div>
-            <div class="product">
-                <img src="/images/tassels.jpg">
-                <p>Tassels</p>
-            </div>
-            <div class="product">
-                <img src="/images/wall mirror1.jpg">
-                <p>Premarked Wall Mirror</p>
-            </div>
+        <div class="product">
+          <img src="/images/highliters.jpg" />
+          <p>Highlighters</p>
         </div>
+        <div class="product">
+          <img src="/images/washitape.jpg" />
+          <p>Washi Tapes</p>
+        </div>
+        <div class="product">
+          <img src="/images/marker.jpg" />
+          <p>Markers</p>
+        </div>
+      </div>
+      <h2>Products You'll Love</h2>
+      <div class="product-grid">
+        <div class="product">
+          <img src="/images/handmadeflower.jpg" />
+          <p>Handmade Flowers</p>
+        </div>
+        <div class="product">
+          <img src="/images/brush.jpg" />
+          <p>Brushes</p>
+        </div>
+        <div class="product">
+          <img src="/images/clock.jpg" />
+          <p>Clock</p>
+        </div>
+        <div class="product">
+          <img src="/images/lippan art.jpg" />
+          <p>Lippan Art</p>
+        </div>
+        <div class="product">
+          <img src="/images/wall mirror1.jpg" />
+          <p>Premarked Wall Mirror</p>
+        </div>
+      </div>
+      <h2>Our Latest Collection</h2>
+      <div class="product-grid">
+        <div class="product">
+          <img src="/images/jali jharokha.jpg" />
+          <p>Jali Jharokha</p>
+        </div>
+        <div class="product">
+          <img src="/images/wall mirror1.jpg" />
+          <p>Premarked Wall Mirror</p>
+        </div>
+        <div class="product">
+          <img src="/images/wallplates.jpg" />
+          <p>Wall Plates</p>
+        </div>
+        <div class="product">
+          <img src="/images/tassels.jpg" />
+          <p>Tassels</p>
+        </div>
+        <div class="product">
+          <img src="/images/wall mirror1.jpg" />
+          <p>Premarked Wall Mirror</p>
+        </div>
+      </div>
     </section>
 
     <section class="card-container">
-        <h2>Personlized Gifts!</h2>
-        <div id="Personlized">
-            <div class="card">
-                <img src="/images/wedding.jpg" alt="Cardboard wedding embroidary hoop">
-                <div class="card-content">
-                    <h3>Cardboard wedding embroidary hoop</h3>
-                    <button>Show more</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/images/flower.jpg" alt="Billo Ki Powri">
-                <div class="card-content">
-                    <h3>Personlized Bouquet</h3>
-                    <button>Show more</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/images/candles.jpg" alt="Kud Park">
-                <div class="card-content">
-                    <h3>Candle</h3>
-                    <button>Show more</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/images/neonss.jpg" alt="neon light">
-                <div class="card-content">
-                    <h3>Neon light</h3>
-                    <button>Show more</button>
-                </div>
-            </div>
+      <h2>Personlized Gifts!</h2>
+      <div id="Personlized">
+        <div class="card">
+          <img
+            src="/images/wedding.jpg"
+            alt="Cardboard wedding embroidary hoop"
+          />
+          <div class="card-content">
+            <h3>Cardboard wedding embroidary hoop</h3>
+            <button>Show more</button>
+          </div>
         </div>
+        <div class="card">
+          <img src="/images/flower.jpg" alt="Billo Ki Powri" />
+          <div class="card-content">
+            <h3>Personlized Bouquet</h3>
+            <button>Show more</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="/images/candles.jpg" alt="Kud Park" />
+          <div class="card-content">
+            <h3>Candle</h3>
+            <button>Show more</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="/images/neonss.jpg" alt="neon light" />
+          <div class="card-content">
+            <h3>Neon light</h3>
+            <button>Show more</button>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="shop-by-price">
-        <h1>Shop By Price</h1>
-        <div class="price-grid">
-            <div class="price-card">Under ₹99</div>
-            <div class="price-card">Under ₹249</div>
-            <div class="price-card">Under ₹499</div>
-            <div class="price-card">Under ₹999</div>
-        </div>
+      <h1>Shop By Price</h1>
+      <div class="price-grid">
+        <div class="price-card">Under ₹99</div>
+        <div class="price-card">Under ₹249</div>
+        <div class="price-card">Under ₹499</div>
+        <div class="price-card">Under ₹999</div>
+      </div>
     </section>
 
     <footer data-th-replace="~{customer/fragment/common :: footer}"></footer>
-
-</body>
-
+  </body>
 </html>
