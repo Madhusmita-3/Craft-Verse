@@ -36,5 +36,11 @@ public class ProductController {
     String customerPdp() {
         return "customer/pdp";
     }
-
+   
+    @GetMapping("/login")
+    String customerLogin() {
+        return "customer/login";
+    }
+    
+    
 }
