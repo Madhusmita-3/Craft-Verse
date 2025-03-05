@@ -1,74 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head data-th-replace="~{customer/fragment/common :: head}"></head>
+  <head data-th-replace="~{customer/fragment/common :: head}"></head>
 
-<body>
-    <link rel="stylesheet" href="/style/customer/pdp.css">
+  <body>
+    <link rel="stylesheet" href="/style/customer/pdp.css" />
 
     <header data-th-replace="~{customer/fragment/common :: header}"></header>
     <nav data-th-replace="~{customer/fragment/common :: nav}"></nav>
     <main class="product-container">
-        <section class="product-details">
-          <div class="product-images">
-            <img src="/images/marker.jpg" alt="marker" class="main-image" />
-            <div class="thumbnails">
-              <img src="/images/marker1.jpg" alt="marker 1" />
-              <img src="/images/marker2.jpg" alt="marker 2" />
-              <img src="/images/marker3.jpg" alt="marker 3" />
-            </div>
+      <section class="product-details">
+        <div class="product-images">
+          <img src="/images/marker.jpg" alt="marker" class="main-image" />
+          <div class="thumbnails">
+            <img src="/images/marker1.jpg" alt="marker 1" />
+            <img src="/images/marker2.jpg" alt="marker 2" />
+            <img src="/images/marker3.jpg" alt="marker 3" />
           </div>
-          <div class="product-info">
-            <h1> Acrylic paint Marker</h1>
-            <p class="price">
-              Rs. 250 <span class="old-price">Rs. 500</span>
-            </p>
-            <div class="rating">★★★★☆ 4.6 (69 reviews)</div>
-            <p class="description">
-                Write the phrase in an elegant calligraphy-style script using gold or silver acrylic markers.
-            </p>
-            <div class="quantity">
-              <label for="qty">Qty:</label>
-              <input type="number" id="qty" value="1" min="1" />
+        </div>
+        <div class="product-info">
+          <h1>Acrylic paint Marker</h1>
+          <p class="price">Rs. 250 <span class="old-price">Rs. 500</span></p>
+          <div class="rating">★★★★☆ 4.6 (69 reviews)</div>
+          <p class="description">
+            Write the phrase in an elegant calligraphy-style script using gold
+            or silver acrylic markers.
+          </p>
+          <div class="quantity">
+            <label for="qty">Qty:</label>
+            <input type="number" id="qty" value="1" min="1" />
+          </div>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+      </section>
 
-            </div>
-            <button class="buy-btn">Buy Now</button>
+      <section class="product-extra">
+        <div class="tabs">
+          <button class="tab-btn">Description</button>
+          <button class="tab-btn">Product Tags</button>
+          <button class="tab-btn">Review</button>
+        </div>
+      </section>
+
+      <section class="related-products">
+        <h2>You May Also Like</h2>
+        <div class="products-grid">
+          <div class="product">
+            <img
+              src="/images/Guangbo Acrylic Marker.jpg"
+              alt="Guangbo Acrylic Marker"
+            />
+            <p>Guangbo Acrylic Marker - Rs. 600</p>
           </div>
-        </section>
-  
-        <section class="product-extra">
-          <div class="tabs">
-            <button class="tab-btn">Description</button>
-            <button class="tab-btn">Product Tags</button>
-            <button class="tab-btn">Review</button>
+          <div class="product">
+            <img
+              src="/images/Sonic Official Acrylic Marker.jpg"
+              alt="Sonic Official Acrylic Marker"
+            />
+            <p>Sonic Official Acrylic Marker - Rs. 1000</p>
           </div>
-        </section>
-  
-        <section class="related-products">
-          <h2>You May Also Like</h2>
-          <div class="products-grid">
-            <div class="product">
-              <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker" />
-              <p>Guangbo Acrylic Marker - Rs. 600</p>
-            </div>
-            <div class="product">
-              <img src="/images/Sonic Official Acrylic Marker.jpg" alt="Sonic Official Acrylic Marker" />
-              <p>Sonic Official Acrylic Marker - Rs. 1000</p>
-            </div>
-            <div class="product">
-              <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker" />
-              <p>Guangbo Acrylic Marker - Rs. 600</p>
-            </div>
-            <div class="product">
-              <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker" />
-              <p>Guangbo Acrylic Marker - Rs. 600</p>
-            </div>
-            <div class="product">
-              <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker" />
-              <p>Guangbo Acrylic Marker - Rs. 600</p>
-            </div>
+          <div class="product">
+            <img
+              src="/images/Guangbo Acrylic Marker.jpg"
+              alt="Guangbo Acrylic Marker"
+            />
+            <p>Guangbo Acrylic Marker - Rs. 600</p>
           </div>
-        </section>
-      </main>
-  <footer data-th-replace="~{customer/fragment/common :: footer}"></footer>
-</body>
+          <div class="product">
+            <img
+              src="/images/Guangbo Acrylic Marker.jpg"
+              alt="Guangbo Acrylic Marker"
+            />
+            <p>Guangbo Acrylic Marker - Rs. 600</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer data-th-replace="~{customer/fragment/common :: footer}"></footer>
+  </body>
 </html>
