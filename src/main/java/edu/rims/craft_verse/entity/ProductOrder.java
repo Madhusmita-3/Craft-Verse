@@ -23,7 +23,7 @@ public class ProductOrder extends Auditable {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "product_order_status")
-    private ProductOrderStatus productOrderStatus = ProductOrderStatus.PENDING;
+    private ProductOrderStatus productOrderStatus = ProductOrderStatus.CART;
 
     @Column(name = "product_order_tracking_id", length = 50)
     private String productOrderTrackingId;

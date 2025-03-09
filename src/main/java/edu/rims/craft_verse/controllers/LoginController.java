@@ -13,12 +13,12 @@ import edu.rims.craft_verse.repository.UserRepository;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-@RequestMapping("/customer")
+@RequestMapping("/customerLogin")
 public class LoginController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping({ "/login", "/" })
+    @GetMapping("/login")
     public String login() {
         return "customer/login";
     }
