@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/style/customer/cart.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Background Sparkles Container -->
+    <div class="background-container"></div>
+
+    <div class="cart-container">
+      <div class="cart-items-section">
+        <h2>Your Bag</h2>
+
+        <!-- Cart Items Fetched From Backend -->
+        <div class="cart-item">
+          <img src="https://via.placeholder.com/80" alt="Product" />
+          <div>Everyday Oil 100ml</div>
+          <div class="quantity">
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+          </div>
+          <div>32€</div>
+          <button class="remove-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="summary-section">
+        <h2>Order Summary</h2>
+        <div>Products: <span>1</span></div>
+        <div>Shipping: 5€</div>
+        <div>
+          <strong>Total: <span>37€</span></strong>
+        </div>
+        <button class="checkout-btn">Checkout</button>
+      </div>
+    </div>
+
+    <script src="/script/cart.js"></script
+
+  </body>
+</html>

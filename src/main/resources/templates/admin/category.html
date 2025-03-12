@@ -9,7 +9,7 @@
       <nav data-th-replace="~{admin/common :: navbar}"></nav>
     </section>
     <div class="container">
-        <h2>Category Management</h2>
+        <h2><i class="fa-solid fa-list category-icon"></i>Category Management</h2>
 
         <div class="add-category">
             <button onclick="openModal()"><i class='bx bx-plus'></i> Add Category</button>
@@ -28,9 +28,9 @@
                 </tr>
             </thead>
             <tbody id="category-list">
-                <tr>
-                    <td></td>
-                    <td>Electronics</td>
+                <tr data-th-each="category:${categories}">
+                    <td>123</td>
+                    <td data-th-each="${category.categoryTitle}"></td>
                     <td>Devices and gadgets</td>
                     <td></td>
                     <td>Enable</td>
@@ -48,12 +48,16 @@
     <div class="overlay" id="overlay"></div>
     <div class="modal" id="category-modal">
         <h3 id="modal-title">Add Category</h3>
-        <form action="" method="post">
-            <input type="text" id="category-id" placeholder="Category Id">
-            <input type="text" id="category-name" placeholder="Category Name">
-            <input type="text" id="category-desc" placeholder="Description">
-            <input type="text" id="category-img" placeholder="Category Img">
-            <input type="text" id="category-status" placeholder="Category Status">
+        <form action="/admin/category/save" method="post">
+         <!-- <input type="text" id="category-id" placeholder="Category Id"> -->
+            <input type="text" id="category-name" placeholder="Category Name" name="categoryTitle">
+            <input type="text" id="category-desc" placeholder="Description" name="categoryDescription">
+            <input type="text" id="category-img" placeholder="Category Img" name="categoryImage">
+            <input type="text" id="category-status" placeholder="Category Status" name="categoryHoverImage">
+            <select name="categoryStatus" id="category-status">
+                <option value="ACTIVE">Active</option>
+                <option value="INACTIVE">In Active</option>
+            </select>
             <input type="submit">
             <button class="cancel" onclick="closeModal()">Cancel</button>
         </form>

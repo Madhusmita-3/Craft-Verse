@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.rims.craft_verse.entity.Category;
 import edu.rims.craft_verse.repository.CategoryRepository;
@@ -27,8 +28,10 @@ public class ProductController {
         return "customer/home";
     }
 
-    @GetMapping("/plp")
-    String customerPlp() {
+    @GetMapping("/category/plp")
+    String getProductByCategoryId(@RequestParam("id") String categoryId, Model model) {
+        Category category = categoryRepository.findById(categoryId).orElseThrow();
+        model.addAttribute("category", category);
         return "customer/plp";
     }
 

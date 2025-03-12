@@ -14,14 +14,7 @@
     <!-- Lower Part -->
     <div class="lower-part">
       <aside class="filters">
-        <!-- <div>
-          <label for="sort">Sort by Feature</label>
-          <select id="sort">
-            <option value="popularity">Popularity</option>
-            <option value="price-low-high">Price: Low to High</option>
-            <option value="price-high-low">Price: High to Low</option>
-          </select>
-        </div> -->
+        
         <div class="sort-container">
           <label for="sort">Sort by Feature</label>
           <select id="sort">
@@ -33,12 +26,6 @@
           </select>
       </div>
       
-        
-        <!-- <div>
-          <p>Availability</p>
-          <label><input type="checkbox"> In Stock (22)</label><br>
-          <label><input type="checkbox"> Out of Stock (3)</label>
-        </div> -->
         <div class="availability-container">
           <h3>Availability</h3>
           <label class="custom-checkbox">
@@ -53,11 +40,6 @@
           </label>
       </div>
       
-
-        <!-- <div>
-          <p>Price</p>
-          <input type="range" min="0" max="500" step="10">
-        </div> -->
         <div class="price-filter">
           <label for="minPrice">Price</label>
           <div class="price-inputs">
@@ -67,11 +49,6 @@
           </div>
       </div>
       
-      <!-- <div>
-          <p>Brand</p>
-          <label><input type="checkbox"> Cello</label><br>
-          <label><input type="checkbox"> Doms</label>
-        </div> -->
         <h3>Brand</h3>
     <label class="brand-option">
         <input type="checkbox" name="brand" value="Cello"> Cello
@@ -82,134 +59,51 @@
     <label class="brand-option">
         <input type="checkbox" name="brand" value="Faber-Castell"> Faber-Castell
     </label>
-
-        <div>
-          <p>Product Type</p>
-          <label><input type="checkbox"> Acrylic</label><br>
-          <label><input type="checkbox"> Permanent Marker</label>
-        </div>
-         <div class="Reviews"> 
-          <h3>Customer Reviews</h3>
-          
-          <label class="radio-label">
-              <input type="radio" name="rating" checked>
-              <span class="all-text">All</span>
-          </label>
-  
-          <label class="radio-label">
-              <input type="radio" name="rating">
-              <span class="stars">★★★★★</span> & up
-          </label>
-  
-          <label class="radio-label">
-              <input type="radio" name="rating">
-              <span class="stars">★★★★☆</span> & up
-          </label>
-  
-          <label class="radio-label">
-              <input type="radio" name="rating">
-              <span class="stars">★★★☆☆</span> & up
-          </label>
-  
-          <label class="radio-label">
-              <input type="radio" name="rating">
-              <span class="stars">★★☆☆☆</span> & up
-          </label>
-  
-          <label class="radio-label">
-              <input type="radio" name="rating">
-              <span class="stars">★☆☆☆☆</span> & up
-          </label>
-          
-      </div>
       </aside>
 
       <section class="products">
-        <div class="product-container">
+        <h2 data-th-text="|Matching items for ${category.categoryTitle}|"></h2>
+
+        <div class="product-container" data-th-each="product:${category.products}">
+
           <img src="/images/acrylic marker.jpg" alt="acrylic marker">
-          <div class="product-title">Precious Pink English Roses</div>
-          <div class="product-price">₹180.00</div>
-          <button class="add-to-cart">Add to Cart</button>
-      </div>
-      <div class="product-container">
+
+          <div class="product-title"> 
+            <h3 data-th-text="${product.productTitle}"></h3>
+          </div>
+          <div class="product-price">
+            <h4 data-th-text="|&#8377; ${product.productPrice}|"></h4>
+          </div>
+          <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 -960 960 960" width="2rem" fill="#1f1f1f"><path d="M286.79-81Q257-81 236-102.21t-21-51Q215-183 236.21-204t51-21Q317-225 338-203.79t21 51Q359-123 337.79-102t-51 21Zm400 0Q657-81 636-102.21t-21-51Q615-183 636.21-204t51-21Q717-225 738-203.79t21 51Q759-123 737.79-102t-51 21ZM235-741l110 228h288l125-228H235Zm-30-60h589.07q22.97 0 34.95 21 11.98 21-.02 42L694-495q-11 19-28.56 30.5T627-453H324l-56 104h491v60H277q-42 0-60.5-28t.5-63l64-118-152-322H51v-60h117l37 79Zm140 288h288-288Z"/></svg></button>
+          </div> 
+
+
+      <!-- <div class="product-container">
         <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
         <div class="product-title">Ivory Pearl Irma</div>
         <div class="product-price">₹580.30</div>
-        <button class="add-to-cart">Add to Cart</button>
-    </div>
-    <div class="product-container">
-      <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
-      <div class="product-title">Fairy Garden Ellis</div>
-      <div class="product-price">₹580.30</div>
-      <button class="add-to-cart">Add to Cart</button>
-  </div>
+        <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 -960 960 960" width="2rem" fill="#1f1f1f"><path d="M286.79-81Q257-81 236-102.21t-21-51Q215-183 236.21-204t51-21Q317-225 338-203.79t21 51Q359-123 337.79-102t-51 21Zm400 0Q657-81 636-102.21t-21-51Q615-183 636.21-204t51-21Q717-225 738-203.79t21 51Q759-123 737.79-102t-51 21ZM235-741l110 228h288l125-228H235Zm-30-60h589.07q22.97 0 34.95 21 11.98 21-.02 42L694-495q-11 19-28.56 30.5T627-453H324l-56 104h491v60H277q-42 0-60.5-28t.5-63l64-118-152-322H51v-60h117l37 79Zm140 288h288-288Z"/></svg></button>
+      </div>
+
+
+      <div class="product-container">
+        <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
+        <div class="product-title">Fairy Garden Ellis</div>
+        <div class="product-price">₹580.30</div>
+        <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 -960 960 960" width="2rem" fill="#1f1f1f"><path d="M286.79-81Q257-81 236-102.21t-21-51Q215-183 236.21-204t51-21Q317-225 338-203.79t21 51Q359-123 337.79-102t-51 21Zm400 0Q657-81 636-102.21t-21-51Q615-183 636.21-204t51-21Q717-225 738-203.79t21 51Q759-123 737.79-102t-51 21ZM235-741l110 228h288l125-228H235Zm-30-60h589.07q22.97 0 34.95 21 11.98 21-.02 42L694-495q-11 19-28.56 30.5T627-453H324l-56 104h491v60H277q-42 0-60.5-28t.5-63l64-118-152-322H51v-60h117l37 79Zm140 288h288-288Z"/></svg></button>
+      </div>
+
+
     <div class="product-container">
       <img src="/images/Sonic Official Acrylic Marker.jpg" alt="Sonic Official Acrylic Marker">
       <div class="product-title">Ivory Pearl Brigitta</div>
       <div class="product-price">₹850.00</div>
-      <button class="add-to-cart">Add to Cart</button>
-  </div>
-        <div class="product-container">
-          <img src="/images/acrylic marker.jpg" alt="acrylic marker">
-          <div class="product-title">Precious Pink Karin</div>
-          <div class="product-price">₹180.00</div>
-          <button class="add-to-cart">Add to Cart</button>
-      </div>
-      <div class="product-container">
-        <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
-        <div class="product-title">Fairy Garden Georgina</div>
-        <div class="product-price">₹580.30</div>
-        <button class="add-to-cart">Add to Cart</button>
-    </div>
-    <div class="product-container">
-      <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
-      <div class="product-title">Little Birdie</div>
-      <div class="product-price">₹580.30</div>
-      <button class="add-to-cart">Add to Cart</button>
-  </div>
-  <div class="product-container">
-    <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
-    <div class="product-title">Fairy Garden Angle</div>
-    <div class="product-price">₹580.30</div>
-    <button class="add-to-cart">Add to Cart</button>
-</div>
-    <div class="product-container">
-      <img src="/images/Sonic Official Acrylic Marker.jpg" alt="Sonic Official Acrylic Marker">
-      <div class="product-title">Fairy Garden Karin Approx</div>
-      <div class="product-price">₹850.00</div>
-      <button class="add-to-cart">Add to Cart</button>
-  </div>
-   <div class="product-container">
-    <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
-    <div class="product-title">Guangbo Acrylic Marker</div>
-    <div class="product-price">₹580.30</div>
-    <button class="add-to-cart">Add to Cart</button>
-</div>
-<div class="product-container">
-  <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
-  <div class="product-title">Guangbo Acrylic Marker</div>
-  <div class="product-price">₹580.30</div>
-  <button class="add-to-cart">Add to Cart</button>
-</div>
-
-<div class="product-container">
-  <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
-  <div class="product-title">Guangbo Acrylic Marker</div>
-  <div class="product-price">₹580.30</div>
-  <button class="add-to-cart">Add to Cart</button>
-</div> 
+      <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 -960 960 960" width="2rem" fill="#1f1f1f"><path d="M286.79-81Q257-81 236-102.21t-21-51Q215-183 236.21-204t51-21Q317-225 338-203.79t21 51Q359-123 337.79-102t-51 21Zm400 0Q657-81 636-102.21t-21-51Q615-183 636.21-204t51-21Q717-225 738-203.79t21 51Q759-123 737.79-102t-51 21ZM235-741l110 228h288l125-228H235Zm-30-60h589.07q22.97 0 34.95 21 11.98 21-.02 42L694-495q-11 19-28.56 30.5T627-453H324l-56 104h491v60H277q-42 0-60.5-28t.5-63l64-118-152-322H51v-60h117l37 79Zm140 288h288-288Z"/></svg></button>
+  </div> -->
+  
 </section>
  </div>
  </div>
-
-  <div class="pagination">
-    <button class="prev">◀</button>
-    <span class="page-number">1</span>
-    <span class="page-number">2</span>
-    <span class="page-number">3</span>
-    <span class="page-number">4</span> 
-    <button class="next">▶</button>
-</div>
   <footer data-th-replace="~{customer/fragment/common :: footer}"></footer>
 </body>
 </html>

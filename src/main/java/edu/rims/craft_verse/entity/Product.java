@@ -20,9 +20,6 @@ public class Product extends Auditable {
     @Column(name = "product_title", nullable = false, length = 255)
     private String productTitle;
 
-    @Column(name = "seller_id", nullable = false)
-    private int sellerId;
-
     @Column(name = "product_description", columnDefinition = "TEXT")
     private String productDescription;
 
