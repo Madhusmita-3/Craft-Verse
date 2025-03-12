@@ -27,7 +27,7 @@
       <h1>BROWSER BY CATEGORIES</h1>
       <div class="container">
         <div class="item" id="item-" data-th-each="category : ${categories}">
-          <a href="/customer/plp">
+          <a data-th-href="|/customer/category/plp?category=${category.categoryId}|">
             <img src="/images/resins.jpg" alt="Resins" id="i-1" />
             <img src="/images/resin photo.jpg" alt="resin" id="i-2" />
             <p data-th-text="${category.categoryTitle}"></p>
@@ -35,6 +35,8 @@
         </div>
       </div>
     </section>
+
+    
     <section id="planner-calender">
       <h2>2025 Planner and Calender</h2>
       <div class="box">

@@ -125,82 +125,23 @@
       </aside>
 
       <section class="products">
-        <div class="product-container">
-          <img src="/images/acrylic marker.jpg" alt="acrylic marker">
-          <div class="product-title">Precious Pink English Roses</div>
-          <div class="product-price">₹180.00</div>
-          <button class="add-to-cart">Add to Cart</button>
-      </div>
-      <div class="product-container">
-        <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
-        <div class="product-title">Ivory Pearl Irma</div>
-        <div class="product-price">₹580.30</div>
-        <button class="add-to-cart">Add to Cart</button>
-    </div>
-    <div class="product-container">
-      <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
-      <div class="product-title">Fairy Garden Ellis</div>
-      <div class="product-price">₹580.30</div>
-      <button class="add-to-cart">Add to Cart</button>
-  </div>
-    <div class="product-container">
-      <img src="/images/Sonic Official Acrylic Marker.jpg" alt="Sonic Official Acrylic Marker">
-      <div class="product-title">Ivory Pearl Brigitta</div>
-      <div class="product-price">₹850.00</div>
-      <button class="add-to-cart">Add to Cart</button>
-  </div>
-        <div class="product-container">
-          <img src="/images/acrylic marker.jpg" alt="acrylic marker">
-          <div class="product-title">Precious Pink Karin</div>
-          <div class="product-price">₹180.00</div>
-          <button class="add-to-cart">Add to Cart</button>
-      </div>
-      <div class="product-container">
-        <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
-        <div class="product-title">Fairy Garden Georgina</div>
-        <div class="product-price">₹580.30</div>
-        <button class="add-to-cart">Add to Cart</button>
-    </div>
-    <div class="product-container">
-      <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
-      <div class="product-title">Little Birdie</div>
-      <div class="product-price">₹580.30</div>
-      <button class="add-to-cart">Add to Cart</button>
-  </div>
-  <div class="product-container">
-    <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
-    <div class="product-title">Fairy Garden Angle</div>
-    <div class="product-price">₹580.30</div>
-    <button class="add-to-cart">Add to Cart</button>
-</div>
-    <div class="product-container">
-      <img src="/images/Sonic Official Acrylic Marker.jpg" alt="Sonic Official Acrylic Marker">
-      <div class="product-title">Fairy Garden Karin Approx</div>
-      <div class="product-price">₹850.00</div>
-      <button class="add-to-cart">Add to Cart</button>
-  </div>
-   <div class="product-container">
-    <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
-    <div class="product-title">Guangbo Acrylic Marker</div>
-    <div class="product-price">₹580.30</div>
-    <button class="add-to-cart">Add to Cart</button>
-</div>
-<div class="product-container">
-  <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
-  <div class="product-title">Guangbo Acrylic Marker</div>
-  <div class="product-price">₹580.30</div>
-  <button class="add-to-cart">Add to Cart</button>
-</div>
+        <h2 dat-th-text="|Matching items for ${category.categoryTitle}|"></h2>
+        <div class="product-container" data-th-each="product : ${product}">
 
-<div class="product-container">
-  <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
-  <div class="product-title">Guangbo Acrylic Marker</div>
-  <div class="product-price">₹580.30</div>
-  <button class="add-to-cart">Add to Cart</button>
-</div> 
-</section>
- </div>
- </div>
+          <!-- <a data-th-href="|/customer/product/pdp?product=${product.productId}|"> -->
+
+          <img src="/images/acrylic marker.jpg" alt="acrylic marker">
+
+          <div class="product-title">
+            <h3 data-th-text="${product.productTitle}"></h3>
+          </div>
+          <div class="product-price">
+            <h4 data-th-text="|&#8377; ${product.productPrice}|"></h4>
+          </div>
+          <button class="add-to-cart">Add to Cart</button>
+        </a>
+      </div>
+     </section>
 
   <div class="pagination">
     <button class="prev">◀</button>

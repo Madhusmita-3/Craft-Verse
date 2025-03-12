@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head data-th-replace="~{admin/common :: head}"></head>
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<body>
+    <link rel="stylesheet" href="/style/admin/widget.css">
+    <section data-th-replace="~{admin/common :: sidebar}"></section>
+    <section id="content">
+      <nav data-th-replace="~{admin/common :: navbar}"></nav>
+    </section>
+    <div class="container">
+        <h2>
+            <div class="widget-icon">
+                <i class="fas fa-cogs"></i>
+            </div>
+            Widget Management
+        </h2>
+
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Enter a widget name...">
+            <button onclick="searchWidget()">Search</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Widget Name</th>
+                    <th>Widget Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="widgetTable">
+                <tr>
+                    <td>New Arrivals</td>
+                    <td>ACTIVE</td>
+                    <td class="actions">
+                        <a href="#">edit</a> | 
+                        <a href="#">delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Featured Product</td>
+                    <td>ACTIVE</td>
+                    <td class="actions">
+                        <a href="#">edit</a> | 
+                        <a href="#">delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Best Selling Products</td>
+                    <td>ACTIVE</td>
+                    <td class="actions">
+                        <a href="#">edit</a> | 
+                        <a href="#">delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<footer data-th-replace="~{admin/common :: footer}"></footer>
+    <script src="/script/widget.js"></script>
+ </body> 
+</html>   

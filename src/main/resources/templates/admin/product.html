@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head data-th-replace="~{admin/common :: head}"></head>
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<body>
+    <link rel="stylesheet" href="/style/admin/product.css">
+    <section data-th-replace="~{admin/common :: sidebar}"></section>
+    <section id="content">
+      <nav data-th-replace="~{admin/common :: navbar}"></nav>
+    </section>
+    <div class="container">
+        <h2><i class="fas fa-box-open product-icon"></i> Product Management</h2>
+
+        <div class="add-product">
+            <button onclick="openModal()"><i class='bx bx-plus'></i> Add Product</button>
+        </div>
+
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th>Product Id</th>
+                    <th>Product Title</th>
+                    <th>Seller Id</th>
+                    <th>ProductDescription</th>
+                    <th>ProductPrice</th>
+                    <th>ProductStockQuantity</th>
+                    <th>Edit Product Category</th>
+                    <th>Delete Product Category</th>
+                </tr>
+            </thead>
+            <tbody id="product-list">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <!-- <td class="actions">
+                        <i class='bx bx-edit edit' onclick="editProduct(this)"></i>
+                        <i class='bx bx-trash delete' onclick="deleteProduct(this)"></i>
+                    </td> -->
+                    <td><button class="delete-btn" onclick="deleteCategory(this)"><i class="fa fa-trash"></i> Delete</button></td>
+                    <td><button class="edit-btn" onclick="editCategory(this)"><i class="fa fa-edit"></i> Edit</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal for Adding Product -->
+    <div class="overlay" id="overlay"></div>
+    <div class="modal" id="product-modal">
+        <h3 id="modal-title">Add Product</h3>
+        <input type="text" id="product-name" placeholder="Product Name">
+        <input type="text" id="product-category" placeholder="Category">
+        <input type="text" id="product-price" placeholder="Price">
+        <input type="text" id="product-stock" placeholder="Stock">
+        <button onclick="saveProduct()">Save</button>
+        <button class="cancel" onclick="closeModal()">Cancel</button>
+    </div>
+
+    <footer data-th-replace="~{admin/common :: footer}"></footer>
+    <script src="/script/product.js"></script>
+ </body> 
+</html>    
