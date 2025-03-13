@@ -2,6 +2,7 @@ package edu.rims.craft_verse.entity;
 
 import java.util.List;
 
+import edu.rims.craft_verse.constant.ProductStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,9 +20,6 @@ public class Product extends Auditable {
 
     @Column(name = "product_title", nullable = false, length = 255)
     private String productTitle;
-
-    @Column(name = "seller_id", nullable = false)
-    private int sellerId;
 
     @Column(name = "product_description", columnDefinition = "TEXT")
     private String productDescription;
@@ -56,4 +54,6 @@ public class Product extends Auditable {
 
     @OneToMany(mappedBy = "product")
     private List<Wishlist> wishlists;
+
+    private String productStatus = ProductStatus.AVAILABLE.toString();
 }

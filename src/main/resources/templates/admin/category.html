@@ -31,11 +31,11 @@
             </thead>
             <tbody id="category-list">
                 <tr data-th-each="category:${categories}">
-                    <td>123</td>
+                    <td data-th-text="${category.categoryId}"></td>
                     <td data-th-text="${category.categoryTitle}"></td>
-                    <td>Devices and gadgets</td>
-                    <td> </td>
-                    <td> </td>
+                    <td data-th-text="${category.categoryDescription}"></td>
+                    <td> <img data-th-src="|/admin/category/images/${category.categoryId}|" alt="" style="width: 50px;"></td>
+                    <td> <img data-th-src="|/admin/category/hoverimages/${category.categoryId}|" alt="" style="width: 50px;"></td>
                     <td>Enable</td>
                     <!-- <td class="actions"> -->
                         <td><button class="delete-btn" onclick="deleteCategory(this)"><i class="fa fa-trash"></i> Delete</button></td>
@@ -51,7 +51,7 @@
     <div class="overlay" id="overlay"></div>
     <div class="modal" id="category-modal">
         <h3 id="modal-title">Add Category</h3>
-        <form action="/admin/category/save" method="post">
+        <form action="/admin/category" method="post" enctype="multipart/form-data">
             <!-- <input type="text" id="category-id" placeholder="Category Id"> -->
             <input type="text" id="category-name" placeholder="Category Name" name="categoryTitle">
             <input type="text" id="category-desc" placeholder="Description" name="categoryDescription">
@@ -61,7 +61,7 @@
                 <option value="ACTIVE">Active</option>
                 <option value="INACTIVE">In Active</option>
             </select>
-            <input type="submit">
+            <button type="submit">Save</button>
             <button class="cancel" onclick="closeModal()">Cancel</button>
         </form>
     </div>

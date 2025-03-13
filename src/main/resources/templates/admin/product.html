@@ -19,30 +19,28 @@
         <table class="product-table">
             <thead>
                 <tr>
-                    <th>Product Id</th>
-                    <th>Product Title</th>
-                    <th>Seller Id</th>
-                    <th>ProductDescription</th>
-                    <th>ProductPrice</th>
-                    <th>ProductStockQuantity</th>
-                    <th>Edit Product Category</th>
-                    <th>Delete Product Category</th>
+                    <th> Title</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>StockQuantity</th>
+                    <th>Image</th>
+                    <th>Status</th>
+                    <th>Delete  Category</th>
+                    <th>Edit  Category</th>
                 </tr>
             </thead>
             <tbody id="product-list">
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <!-- <td class="actions">
-                        <i class='bx bx-edit edit' onclick="editProduct(this)"></i>
-                        <i class='bx bx-trash delete' onclick="deleteProduct(this)"></i>
-                    </td> -->
-                    <td><button class="delete-btn" onclick="deleteCategory(this)"><i class="fa fa-trash"></i> Delete</button></td>
-                    <td><button class="edit-btn" onclick="editCategory(this)"><i class="fa fa-edit"></i> Edit</button></td>
+                <tr data-th-each="product:${products}">
+                    <td data-th-text="${product.productTitle}"></td>
+                    <td data-th-text="${product.productDescription}"></td>
+                    <td data-th-text="${product.productPrice}"></td>
+                    <td data-th-text="${product.productStockQuantity}"></td>
+                    <td>
+                        <img data-th-src="|/admin/product/images/${product.productId}|"alt="resin art" height="40">
+                    </td>
+                    <td data-th-text="${product.productStatus}"></td>
+                    <td><a class="delete-btn" data-th-href="|/admin/product/remove?id=${product.productId}|"><i class="fa fa-trash"></i> Delete</a></td>
+                    <td><a class="edit-btn"><i class="fa fa-edit"></i> Edit</a></td>
                 </tr>
             </tbody>
         </table>
@@ -52,12 +50,25 @@
     <div class="overlay" id="overlay"></div>
     <div class="modal" id="product-modal">
         <h3 id="modal-title">Add Product</h3>
-        <input type="text" id="product-name" placeholder="Product Name">
-        <input type="text" id="product-category" placeholder="Category">
-        <input type="text" id="product-price" placeholder="Price">
-        <input type="text" id="product-stock" placeholder="Stock">
+     <form action="/admin/product" method="post" enctype="multipart/form-data">
+        <input type="text" id="product-name" placeholder="Product Name" name="productTitle">
+        <input type="text" id="product-description" placeholder="Description" name="productDescription">
+        <input type="text" id="product-price" placeholder="Price" name="productPrice">
+        <label for="product-stock">Stock:</label>
+        <input type="number" id="product-stock" name="productStockQuantity" value="0" min="0">
+        <!-- <input type="number" id="product-stock" placeholder="Stock" name="productStockQuantity"> -->
+        <input type="file" name="productImage" id="product" accept="images/png, images/jpeg, images/jpg">
+        <select name="category" id="category">
+            <option data-th-value="${category.categoryId}" data-th-each="category:${categories}" data-th-text="${category.categoryTitle}"></option>
+        </select>
+        <select name="productStatus" id="productStatus">
+            <option value="AVAILABLE">AVAILABLE</option>
+            <option value="DISCONTINUED">DISCONTINUED</option>
+            <option value="OUT_OF_STOCK">OUT_OF_STOCK</option>
+        </select>
         <button onclick="saveProduct()">Save</button>
         <button class="cancel" onclick="closeModal()">Cancel</button>
+     </form>
     </div>
 
     <footer data-th-replace="~{admin/common :: footer}"></footer>

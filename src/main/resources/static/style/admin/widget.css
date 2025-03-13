@@ -5,12 +5,15 @@ body {
 }
 
 .container {
-    max-width: 900px;
-    margin: auto;
-    background: #fff;
+    width: 30%; /* Adjust to fit properly */
+    max-width: 1100px; /* Prevent excessive stretching */
+    min-width:1000px; /* Ensures it doesn't become too small */
+    margin: 20px auto;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 315px;
 }
 
 h2 {
@@ -20,7 +23,7 @@ h2 {
 }
 
 .widget-icon {
-    background: #4CAF50;
+    background: #e082ae;
     color: white;
     width: 40px;
     height: 40px;
@@ -40,7 +43,7 @@ h2 {
 .search-container input {
     flex: 1;
     padding: 10px;
-    border: 2px solid #4CAF50;
+    border: 2px solid #da9ec8;
     border-radius: 5px;
     outline: none;
 }
@@ -48,7 +51,7 @@ h2 {
 .search-container button {
     padding: 10px 15px;
     border: none;
-    background: #4CAF50;
+    background: #f7a7d3;
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -56,7 +59,7 @@ h2 {
 }
 
 .search-container button:hover {
-    background: #45a049;
+    background: #dba6ce;
 }
 
 table {
@@ -72,12 +75,12 @@ th, td {
 }
 
 th {
-    background: #4CAF50;
+    background: #e4a3d4;
     color: white;
 }
 
 .actions a {
-    color: #007bff;
+    color: #000000;
     text-decoration: none;
     margin-right: 10px;
 }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head data-th-replace="~{admin/common :: head}"></head>
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<body>
+    <link rel="stylesheet" href="/style/admin/order.css">
+    <section data-th-replace="~{admin/common :: sidebar}"></section>
+    <section id="content">
+      <nav data-th-replace="~{admin/common :: navbar}"></nav>
+    </section>
+    <div class="container">
+        <h2>Order Management</h2>
+
+        <div class="add-order">
+            <button onclick="openModal()"><i class='bx bx-plus'></i> Add Order</button>
+        </div>
+
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer Name</th>
+                    <th>Date</th>
+                    <th>Total Amount</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="order-list">
+                <tr>
+                    <td>1001</td>
+                    <td>John Doe</td>
+                    <td>2025-02-28</td>
+                    <td>₹500.00</td>
+                    <td>Completed</td>
+                    <td class="actions">
+                        <i class='bx bx-edit edit' onclick="editOrder(this)"></i>
+                        <i class='bx bx-trash delete' onclick="deleteOrder(this)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal for Adding Order -->
+    <div class="overlay" id="overlay"></div>
+    <div class="modal" id="order-modal">
+        <h3 id="modal-title">Add Order</h3>
+        <input type="text" id="order-id" placeholder="Order ID">
+        <input type="text" id="customer-name" placeholder="Customer Name">
+        <input type="date" id="order-date">
+        <input type="text" id="order-total" placeholder="Total Amount">
+        <select id="order-status">
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+            <option value="Processing">Processing</option>
+        </select>
+        <button onclick="saveOrder()">Save</button>
+        <button class="cancel" onclick="closeModal()">Cancel</button>
+    </div>
+
+
+    <footer data-th-replace="~{admin/common :: footer}"></footer>
+    <script src="/script/order.js"></script>
+ </body> 
+</html>  

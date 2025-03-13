@@ -26,29 +26,29 @@ function closeModal() {
 }
 
 function saveProduct() {
-    let name = document.getElementById('product-name').value;
-    let category = document.getElementById('product-category').value;
-    let price = document.getElementById('product-price').value;
-    let stock = document.getElementById('product-stock').value;
+    // let name = document.getElementById('product-name').value;
+    // let category = document.getElementById('product-category').value;
+    // let price = document.getElementById('product-price').value;
+    // let stock = document.getElementById('product-stock').value;
 
-    if (editIndex) {
-        editIndex.cells[1].innerText = name;
-        editIndex.cells[2].innerText = category;
-        editIndex.cells[3].innerText = price;
-        editIndex.cells[4].innerText = stock;
-    } else {
-        let table = document.getElementById('product-list');
-        let row = table.insertRow();
-        row.innerHTML = `<td><img src="https://via.placeholder.com/50"></td>
-                         <td>${name}</td>
-                         <td>${category}</td>
-                         <td>${price}</td>
-                         <td>${stock}</td>
-                         <td class="actions">
-                             <i class='bx bx-edit edit' onclick="editProduct(this)"></i>
-                             <i class='bx bx-trash delete' onclick="deleteProduct(this)"></i>
-                         </td>`;
-    }
+    // if (editIndex) {
+    //     editIndex.cells[1].innerText = name;
+    //     editIndex.cells[2].innerText = category;
+    //     editIndex.cells[3].innerText = price;
+    //     editIndex.cells[4].innerText = stock;
+    // } else {
+    //     let table = document.getElementById('product-list');
+    //     let row = table.insertRow();
+    //     row.innerHTML = `<td><img src="https://via.placeholder.com/50"></td>
+    //                      <td>${name}</td>
+    //                      <td>${category}</td>
+    //                      <td>${price}</td>
+    //                      <td>${stock}</td>
+    //                      <td class="actions">
+    //                          <i class='bx bx-edit edit' onclick="editProduct(this)"></i>
+    //                          <i class='bx bx-trash delete' onclick="deleteProduct(this)"></i>
+    //                      </td>`;
+    // }
     closeModal();
 }
 
@@ -58,4 +58,15 @@ function deleteProduct(element) {
 
 function editProduct(element) {
     openModal(true, element.parentElement.parentElement);
+}
+function increaseStock() {
+    let stockInput = document.getElementById("product-stock");
+    stockInput.value = parseInt(stockInput.value) + 1;
+}
+
+function decreaseStock() {
+    let stockInput = document.getElementById("product-stock");
+    if (parseInt(stockInput.value) > 0) {
+        stockInput.value = parseInt(stockInput.value) - 1;
+    }
 }
