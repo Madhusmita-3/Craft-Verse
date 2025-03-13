@@ -22,12 +22,15 @@
         ></video>
       </div>
     </div>
-    
+
     <section id="browse-sec">
       <h1>BROWSER BY CATEGORIES</h1>
       <div class="container">
         <div class="item" id="item-" data-th-each="category : ${categories}">
-          <a data-th-href="|/customer/category/plp?category=${category.categoryId}|">
+          <a
+            data-th-href="|/customer/category/plp?id=${category.categoryId}|"
+            class="item-anchor"
+          >
             <img src="/images/resins.jpg" alt="Resins" id="i-1" />
             <img src="/images/resin photo.jpg" alt="resin" id="i-2" />
             <p data-th-text="${category.categoryTitle}"></p>
@@ -57,73 +60,80 @@
     </section>
 
     <section id="Aesthetic-journaling">
-      <h2>Aesthetic Journaling Items</h2>
-      <div class="product-grid">
-        <div class="product">
-          <img src="/images/diary.jpg" />
-          <p>Sticky Notes</p>
-        </div>
-        <div class="product">
-          <img src="/images/stickers.jpg" />
-          <p>Stickers</p>
-        </div>
-        <div class="product">
-          <img src="/images/highliters.jpg" />
-          <p>Highlighters</p>
-        </div>
-        <div class="product">
-          <img src="/images/washitape.jpg" />
-          <p>Washi Tapes</p>
-        </div>
-        <div class="product">
-          <img src="/images/marker.jpg" />
-          <p>Markers</p>
-        </div>
-      </div>
-      <h2>Products You'll Love</h2>
-      <div class="product-grid">
-        <div class="product">
-          <img src="/images/handmadeflower.jpg" />
-          <p>Handmade Flowers</p>
-        </div>
-        <div class="product">
-          <img src="/images/brush.jpg" />
-          <p>Brushes</p>
-        </div>
-        <div class="product">
-          <img src="/images/clock.jpg" />
-          <p>Clock</p>
-        </div>
-        <div class="product">
-          <img src="/images/lippan art.jpg" />
-          <p>Lippan Art</p>
-        </div>
-        <div class="product">
-          <img src="/images/wall mirror1.jpg" />
-          <p>Premarked Wall Mirror</p>
+      <div class="aes">
+        <h2>Aesthetic Journaling Items</h2>
+        <div class="product-grid">
+          <div class="product">
+            <img src="/images/diary.jpg" />
+            <p>Sticky Notes</p>
+          </div>
+          <div class="product">
+            <img src="/images/stickers.jpg" />
+            <p>Stickers</p>
+          </div>
+          <div class="product">
+            <img src="/images/highliters.jpg" />
+            <p>Highlighters</p>
+          </div>
+          <div class="product">
+            <img src="/images/washitape.jpg" />
+            <p>Washi Tapes</p>
+          </div>
+          <div class="product">
+            <img src="/images/marker.jpg" />
+            <p>Markers</p>
+          </div>
         </div>
       </div>
-      <h2>Our Latest Collection</h2>
-      <div class="product-grid">
-        <div class="product">
-          <img src="/images/jali jharokha.jpg" />
-          <p>Jali Jharokha</p>
+      <div class="aes">
+        <h2>Products You'll Love</h2>
+        <div class="product-grid">
+          <div class="product">
+            <img src="/images/handmadeflower.jpg" />
+            <p>Handmade Flowers</p>
+          </div>
+          <div class="product">
+            <img src="/images/brush.jpg" />
+            <p>Brushes</p>
+          </div>
+          <div class="product">
+            <img src="/images/clock.jpg" />
+            <p>Clock</p>
+          </div>
+          <div class="product">
+            <img src="/images/lippan art.jpg" />
+            <p>Lippan Art</p>
+          </div>
+          <div class="product">
+            <img src="/images/wall mirror1.jpg" />
+            <p>Premarked Wall Mirror</p>
+          </div>
         </div>
-        <div class="product">
-          <img src="/images/wall mirror1.jpg" />
-          <p>Premarked Wall Mirror</p>
-        </div>
-        <div class="product">
-          <img src="/images/wallplates.jpg" />
-          <p>Wall Plates</p>
-        </div>
-        <div class="product">
-          <img src="/images/tassels.jpg" />
-          <p>Tassels</p>
-        </div>
-        <div class="product">
-          <img src="/images/wall mirror1.jpg" />
-          <p>Premarked Wall Mirror</p>
+      </div>
+
+      <div class="aes">
+        <h2>Our Latest Collection</h2>
+        <div class="product-grid">
+          <div class="product">
+            <img src="/images/jali jharokha.jpg" />
+            <p>Jali Jharokha</p>
+          </div>
+          <div class="product">
+            <img src="/images/wall mirror1.jpg" />
+            <p>Premarked Wall Mirror</p>
+          </div>
+          <div class="product">
+            <img src="/images/wallplates.jpg" />
+            <p>Wall Plates</p>
+          </div>
+          <div class="product">
+            <img src="/images/tassels.jpg" />
+            <p>Tassels</p>
+          </div>
+          <div class="product">
+            <img src="/images/wall mirror1.jpg" />
+            <p>Premarked Wall Mirror</p>
+          </div>
         </div>
       </div>
     </section>

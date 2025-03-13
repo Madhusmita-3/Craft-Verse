@@ -1,75 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- <head data-th-replace="~{customer/fragment/common :: head}"></head> -->
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Rotating Login & Signup Form</title>
+  </head>
   <body>
     <link rel="stylesheet" href="/style/customer/login.css" />
 
-    <div class="container">
-      <div class="login-box">
-        <div class="logo">
-          <div class="login"></div>
-          <h2>Log in</h2>
-        </div>
+    <input type="radio" id="chkl" name="a1" style="display: none" />
+    <input type="radio" id="chk2" name="a1" style="display: none" />
+    <div class="box">
+      <!-- First Page (Main Landing) -->
+      <div class="a">
+        <label for="chkl">SIGN UP</label>
+        <label for="chk2" id="sup">LOGIN</label>
+      </div>
+      <!-- Signup Page -->
+      <div class="b">
+        <form action="/customer/sign-up" class="frm" method="post">
+          <h2 class="title">SIGN UP</h2>
+          <input
+            type="text"
+            name="userName"
+            placeholder="Enter Full Name"
+            required
+          />
 
-        <form>
-          <label for="email">Email Address:</label>
-          <input type="email" id="email" placeholder="abc@xyz.com" />
+          <input
+            type="email"
+            name="userEmail"
+            placeholder="Enter Email Address"
+            required
+          />
 
-          <label for="password">Password:</label>
-          <input type="password" id="password" placeholder="********" />
+          <input
+            type="tel"
+            name="userPhoneNumber"
+            placeholder="Phone Number"
+            required
+          />
+          <input
+            type="text"
+            name="userAddress"
+            placeholder="Address"
+            required
+          />
+          <input
+            type="password"
+            name="userPassword"
+            placeholder="Enter Password"
+            required
+          />
 
-          <div class="options">
-            <label><input type="checkbox" /> Remember me</label>
-            <a href="#">Forgot password?</a>
-          </div>
-
-          <button type="submit" class="login-btn">Log in</button>
-
-          <p class="or">or connect with</p>
-
-          <div class="social-icons">
-            <div class="social-buttons">
-              <button class="google-btn">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 48 48"
-                >
-                  <path
-                    fill="#4285F4"
-                    d="M44.5 20H24v8.5h11.8C34.4 34.4 29.7 38 24 38c-7.7 0-14-6.3-14-14s6.3-14 14-14c3.2 0 6.1 1.1 8.4 2.9l6.3-6.3C34.8 3.3 29.7 1 24 1 11.9 1 2 10.9 2 23s9.9 22 22 22c11.5 0 21-8.3 21-21 0-1-.1-2-.3-3z"
-                  />
-                </svg>
-                Sign up with Google
-              </button>
-
-              <button class="facebook-btn">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 48 48"
-                >
-                  <path
-                    fill="#1877F2"
-                    d="M24 1C11.9 1 2 10.9 2 23c0 11 8 20.1 18.5 21.7V30.7h-5.5V23h5.5v-5.6c0-5.4 3.2-8.4 8.1-8.4 2.3 0 4.6.4 4.6.4v5h-2.6c-2.6 0-3.4 1.6-3.4 3.3V23h6.3l-1 7.7h-5.3v14c10.5-1.6 18.5-10.7 18.5-21.7C46 10.9 36.1 1 24 1z"
-                  />
-                </svg>
-                Sign up with Facebook
-              </button>
-            </div>
-          </div>
-
-          <p class="signup-text">
-            Don't have an account? <a href="#">Sign up</a>
-          </p>
+          <input type="submit" value="SIGN UP" id="btn" />
+          <label for="chk2" id="btm">LOGIN HERE</label>
         </form>
       </div>
 
-      <div class="info-box">
-        <button class="learn-more">Learn More</button>
+      <!-- Login Page -->
+      <div class="c">
+        <form action="" class="frm">
+          <h2 class="title">LOGIN</h2>
+          <input type="text" placeholder="Username or Email" required />
+          <input type="password" placeholder="Enter Password" required />
+          <input type="submit" value="LOGIN" id="btn" />
+          <label for="chkl" id="btm">SIGN UP HERE</label>
+        </form>
       </div>
     </div>
   </body>
