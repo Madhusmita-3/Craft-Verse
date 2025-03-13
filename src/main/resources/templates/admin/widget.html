@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head data-th-replace="~{admin/common :: head}"></head>
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<body>
+    <link rel="stylesheet" href="/style/admin/widget.css">
+    <section data-th-replace="~{admin/common :: sidebar}"></section>
+    <section id="content">
+      <nav data-th-replace="~{admin/common :: navbar}"></nav>
+    </section>
+    <div class="container">
+        <h2>
+            <div class="widget-icon">
+                <i class="fas fa-cogs"></i>
+            </div>
+           <span class="text" >Widget Management</span>
+        </h2>
+
+        <!-- <div class="search-container">
+            <input type="text" id="search" placeholder="Enter a widget name...">
+            <button onclick="searchWidget()">Search</button>
+        </div> -->
+        <div class="addwidgetContainer">
+            <form action="/admin/widget/add" method="post">
+                <input type="text" name="widgetName" placeholder="Enter a widget name..." data-th-value="${widget != null ? widget.widgetName :'' }">
+                <input type="hidden" name="widgetId" data-th-value="${widget != null ? widget.widgetId:''}">
+                <input type="submit" >
+            </form>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Widget Name</th>
+                    <th>Widget Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody  id="categoryTable">
+                <tr data-th-each="widget :${widgets}">
+                    <td data-th-text="${widget,widgetName}"></td>
+                    <!-- <td data-th-text="${widget.widgetStatus}" data-th-class="${widget.widgetStatus.name()}"></td> -->
+                     <td>
+                        <a  data-th-href="|/admin/widget/edit?id=${widget.widgetId}|">edit</a>
+                        <a data-th-href="|/admin/widget/remove?id=${widget.widgetId}|">delete</a>
+                     </td>
+                </tr>
+            </tbody>
+            <!-- <modal> -->
+                <!-- <div id="categoryModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close"id="modal-close-btn" onclick="closeModal()">&times;</span>
+                        <h3>Add Category</h3>
+
+                        <form action="/admin/category" id="categoryForm" method="post" enctype="multipart/form-data">
+                            <label for="categoryTitle">Category Name:</label>
+                            <input type="text" id="categoryTitle" name="categoryTitle">
+
+                            <label for="categoryDescription">Category Description:</label>
+                            <input type="text" id="categoryDescription" name="categoryDescription">
+
+                            <label for="categoryImageUrl">Category Image:</label>
+                            <input type="text" id="categoryImageUrl" name="categoryImageUrl" accept="Image/*">
+
+                            <label for="categoryStatus">Category Status:</label>
+                            <select id="categoryStatus" >
+                                <option value="ACTIVE">Active</option>
+                                <option value="INACTIVE">Inactive</option>
+                            </select>   
+
+
+
+
+
+
+
+
+                        </form>
+                    </div>
+                    
+                </div> -->
+
+              <tbody id="widgetTable">
+                <tr>
+                    <td>New Arrivals</td>
+                    <td>ACTIVE</td>
+                    <td class="actions">
+                        <a href="#">edit</a> | 
+                        <a href="#">delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Featured Product</td>
+                    <td>ACTIVE</td>
+                    <td class="actions">
+                        <a href="#">edit</a> | 
+                        <a href="#">delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Best Selling Products</td>
+                    <td>ACTIVE</td>
+                    <td class="actions">
+                        <a href="#">edit</a> | 
+                        <a href="#">delete</a>
+                    </td>
+                </tr>
+            </tbody> 
+        </table>
+    </div>
+<footer data-th-replace="~{admin/common :: footer}"></footer>
+    <script src="/script/widget.js"></script>
+ </body> 
+</html>   

@@ -2,6 +2,7 @@
 <html lang="en">
 <head data-th-replace="~{admin/common :: head}"></head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 <body>
     <link rel="stylesheet" href="/style/admin/category.css">
     <section data-th-replace="~{admin/common :: sidebar}"></section>
@@ -9,7 +10,7 @@
       <nav data-th-replace="~{admin/common :: navbar}"></nav>
     </section>
     <div class="container">
-        <h2><i class="fa-solid fa-list category-icon"></i>Category Management</h2>
+        <h2> <i class="fa-solid fa-list category-icon"></i>Category Management</h2>
 
         <div class="add-category">
             <button onclick="openModal()"><i class='bx bx-plus'></i> Add Category</button>
@@ -19,9 +20,10 @@
             <thead>
                 <tr>
                     <th>Category Id</th>
-                    <th>Category Name</th>
+                    <th>Category Title</th>
                     <th> Category Description</th>
-                    <th>Category Img</th>
+                    <th>Category Image</th>
+                    <th>Category Hover Image</th>
                     <th>Category Status</th>
                     <th>Edit Product Category</th>
                     <th>Delete Product Category</th>
@@ -29,10 +31,11 @@
             </thead>
             <tbody id="category-list">
                 <tr data-th-each="category:${categories}">
-                    <td>123</td>
-                    <td data-th-each="${category.categoryTitle}"></td>
-                    <td>Devices and gadgets</td>
-                    <td></td>
+                    <td data-th-text="${category.categoryId}"></td>
+                    <td data-th-text="${category.categoryTitle}"></td>
+                    <td data-th-text="${category.categoryDescription}"></td>
+                    <td> <img data-th-src="|/admin/category/images/${category.categoryId}|" alt="" style="width: 50px;"></td>
+                    <td> <img data-th-src="|/admin/category/hoverimages/${category.categoryId}|" alt="" style="width: 50px;"></td>
                     <td>Enable</td>
                     <!-- <td class="actions"> -->
                         <td><button class="delete-btn" onclick="deleteCategory(this)"><i class="fa fa-trash"></i> Delete</button></td>
@@ -48,17 +51,17 @@
     <div class="overlay" id="overlay"></div>
     <div class="modal" id="category-modal">
         <h3 id="modal-title">Add Category</h3>
-        <form action="/admin/category/save" method="post">
-         <!-- <input type="text" id="category-id" placeholder="Category Id"> -->
+        <form action="/admin/category" method="post" enctype="multipart/form-data">
+            <!-- <input type="text" id="category-id" placeholder="Category Id"> -->
             <input type="text" id="category-name" placeholder="Category Name" name="categoryTitle">
             <input type="text" id="category-desc" placeholder="Description" name="categoryDescription">
-            <input type="text" id="category-img" placeholder="Category Img" name="categoryImage">
-            <input type="text" id="category-status" placeholder="Category Status" name="categoryHoverImage">
+            <input type="file" id="category-img" placeholder="Category Img" name="categoryImage">
+            <input type="file" id="category-img" placeholder="Category Img" name="categoryHoverImage">
             <select name="categoryStatus" id="category-status">
                 <option value="ACTIVE">Active</option>
                 <option value="INACTIVE">In Active</option>
             </select>
-            <input type="submit">
+            <button type="submit">Save</button>
             <button class="cancel" onclick="closeModal()">Cancel</button>
         </form>
     </div>
