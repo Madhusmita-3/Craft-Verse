@@ -6,12 +6,11 @@
 }
 
 body {
-    background: #f7f5f5;
-    font-family:  'Brush Script MT';
-    /* margin-left: 210px; */
+    background: #f9f9f9;
 }
+
 .container {
-    width:77%;
+    width: 30%; 
     max-width: 1100px;
     min-width:1000px; 
     margin: 20px auto;
@@ -20,103 +19,55 @@ body {
     border-radius: 8px;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
     margin-left: 315px;
-   
 }
-.category-icon {
-    font-size: 28px;
-    margin-right: 10px; /* Space between icon and text */
-    color: #818edb;
-}
-
-/* .container {
-    width: 100%;
-    margin: auto;
-    padding: 20px;
-} */
 
 h2 {
-    text-align: left;
+    text-align: center;
     margin-bottom: 20px;
 }
 
-.category-table {
+.order-table {
     width: 100%;
     border-collapse: collapse;
     background: white;
     border-radius: 8px;
-    /* overflow: hidden; */
+    overflow: hidden;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    
 }
 
-.category-table th, .category-table td {
-    padding-inline: 5px;
+.order-table th, .order-table td {
+    padding: 15px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
-.category-table th {
-    background: #e48a8a;
+.order-table th {
+    background: #4CAF50;
     color: white;
 }
 
-/* .actions i {
+.actions i {
     cursor: pointer;
     margin: 0 5px;
     font-size: 18px;
-} */
-
-/* General Button Styling */
-button {
-padding: 8px 12px;
-font-size: 14px;
-font-weight: bold;
-border: none;
-cursor: pointer;
-border-radius: 5px;
-transition: background 0.3s ease, transform 0.2s;
 }
 
-/* Delete Button - Red */
-.delete-btn {
-background: #bb8b86; /* Red */
-color: white;
-border: 1px solid #b8807a;
-}
-
-.delete-btn:hover {
-background: #be9590;
-transform: scale(1.05);
-}
-
-/* Edit Button - Orange */
-.edit-btn {
-background: #dab5be; /* Orange */
-color: white;
-border: 1px solid #e09ebd;
-}
-
-.edit-btn:hover {
-background: #bdb1a6;
-transform: scale(1.05);
-}
-
-/* .edit {
+.edit {
     color: #ffa500;
 }
 
 .delete {
     color: #ff4d4d;
-} */
+}
 
-.add-category {
+.add-order {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 10px;
 }
 
-.add-category button {
-    background: #d6b39e;
+.add-order button {
+    background: #4CAF50;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -124,8 +75,8 @@ transform: scale(1.05);
     border-radius: 5px;
 }
 
-.add-category button:hover {
-    background: #e49393;
+.add-order button:hover {
+    background: #45a049;
 }
 
 .modal {
@@ -150,8 +101,8 @@ transform: scale(1.05);
 }
 
 .modal button {
-    background: #976262;
-    color: rgb(240, 209, 209);
+    background: #4CAF50;
+    color: white;
     padding: 10px;
     border: none;
     cursor: pointer;
@@ -159,7 +110,7 @@ transform: scale(1.05);
 }
 
 .modal button.cancel {
-    background: #ec8d8d;
+    background: #ccc;
 }
 
 .overlay {
@@ -174,7 +125,7 @@ transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
-    .category-table th, .category-table td {
+    .order-table th, .order-table td {
         padding: 10px;
     }
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.rims.craft_verse.constant.ProductStatus;
 import edu.rims.craft_verse.entity.Category;
@@ -24,6 +25,8 @@ public class ProductController {
 
     @Autowired
     private CategoryRepository categoryRepository;
+    // @Autowired
+    // private ProductRepository productRepository;
 
     @Autowired
     private ProductRepository productRepository;
