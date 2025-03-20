@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import edu.rims.craft_verse.constant.ProductStatus;
 import edu.rims.craft_verse.constant.WidgetStatus;
 import edu.rims.craft_verse.entity.Category;
 import edu.rims.craft_verse.entity.Product;
@@ -22,12 +23,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequestMapping("/customer")
 public class ProductController {
 
-    private final CartController cartController;
-
     @Autowired
     private CategoryRepository categoryRepository;
-    // @Autowired
-    // private ProductRepository productRepository;
+    @Autowired
+    private ProductRepository productRepository;
 
      @Autowired
     private WidgetRepository widgetRepository;
@@ -87,6 +86,4 @@ public class ProductController {
     String searchProduct(){
         return "customer/plp";
     }
-}
-
 }
