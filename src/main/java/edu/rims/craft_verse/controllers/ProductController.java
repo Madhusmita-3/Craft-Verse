@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.rims.craft_verse.constant.WidgetStatus;
 import edu.rims.craft_verse.entity.Category;
+import edu.rims.craft_verse.entity.Product;
 import edu.rims.craft_verse.repository.CategoryRepository;
 import edu.rims.craft_verse.repository.ProductRepository;
 import edu.rims.craft_verse.repository.WidgetRepository;
@@ -20,6 +21,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 @RequestMapping("/customer")
 public class ProductController {
+
+    private final CartController cartController;
 
     @Autowired
     private CategoryRepository categoryRepository;
@@ -61,5 +64,29 @@ public class ProductController {
     String customerLogin() {
         return "customer/login";
     }
+
+    // @GetMapping("/product/search")
+    // String searchProduct(@RequestParam("search") String orderItemName) {
+    //     System.out.println(orderItemName);
+    //     return "customer/plp";
+    // }
+
+@GetMapping("/customer/search")
+    String searchProduct(@RequestParam String search, Model model){
+        List<Product> products = productRepository
+            .findByProductTitleContainingIgnoreCaseAndProductStatus(search, ProductStatus.AVAILABLE);
+        model.addAttribute("products", products);
+
+        List<Category> categories = categoryRepository.findAll();
+        model.addAttribute("categories", categories);
+        
+        return "customer/plp";
+    }
+
+    @GetMapping ("/product/search")
+    String searchProduct(){
+        return "customer/plp";
+    }
+}
 
 }
