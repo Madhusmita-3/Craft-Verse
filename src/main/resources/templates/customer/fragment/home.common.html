@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Showcase</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <!-- Planner Calendar Fragment -->
+    <section th:fragment="plannerCalender(products)" id="planner-calender">
+      <h2>2025 Planner and Calender</h2>
+      <div class="box">
+        <div class="items" th:each="product : ${products}">
+          <img src="/images/diary1234.jpg" alt="Diary" />
+          <img src="/images/resin-photo.jpg" alt="Resin Photo" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Aesthetic Journaling Fragment -->
+    <section th:fragment="aestheticJournaling(products)" id="Aesthetic-journaling">
+     <div class="aes">
+      <h2>Aesthetic Journaling Items</h2>
+      <div class="product-grid">
+        <div th:each="product : ${products}" class="product">
+          <img
+            th:src="${product.productImageUrl}"
+            th:alt="${product.productTitle}"
+          />
+          <p th:text="${product.productTitle}"></p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- Products You'll Love Fragment -->
+    <section th:fragment="productsYoullLove(products)" id="Aesthetic-journaling">
+      <div class="aes">
+        <h2>Products You'll Love</h2>
+      <div class="product-grid">
+        <div th:each="product : ${products}" class="product">
+          <img
+            th:src="${product.productImageUrl}"
+            th:alt="${product.productTitle}"
+          />
+          <p th:text="${product.productTitle}"></p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- Our Latest Collection Fragment -->
+    <section th:fragment="ourLatestCollection(products)" id="Aesthetic-journaling">
+      <div class="aes">
+        <h2>Our Latest Collection</h2>
+      <div class="product-grid">
+        <div th:each="product : ${products}" class="product">
+          <img
+            th:src="${product.productImageUrl}"
+            th:alt="${product.productTitle}"
+          />
+          <p th:text="${product.productTitle}"></p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- Personalized Gifts Fragment -->
+    <section th:fragment="personalizedGifts(products)" class="card-container">
+      <h2>Personalized Gifts</h2>
+      <div id="Personalized">
+        <div th:each="product : ${products}" class="card">
+          <img
+            th:src="${product.productImageUrl}"
+            th:alt="${product.productTitle}"
+          />
+          <div class="card-content">
+            <h3 th:text="${product.productTitle}"></h3>
+            <button>Show more</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

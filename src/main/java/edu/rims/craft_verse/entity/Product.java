@@ -1,5 +1,6 @@
 package edu.rims.craft_verse.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.rims.craft_verse.constant.ProductStatus;
@@ -56,4 +57,19 @@ public class Product extends Auditable {
     private List<Wishlist> wishlists;
 
     private String productStatus = ProductStatus.AVAILABLE.toString();
+
+    @ManyToMany(mappedBy = "products")
+    private List<Widget> widgets;
+
+    public void addWidget(Widget widget) {
+        if (widgets == null)
+            widgets = new ArrayList<>();
+
+        widgets.add(widget);
+    }
+
+    public void removeWidget(Widget widget) {
+        widgets.remove(widget);
+    }
+
 }
