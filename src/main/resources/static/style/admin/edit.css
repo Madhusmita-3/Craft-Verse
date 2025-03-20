@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.edit-container {
+    background: rgba(30, 41, 59, 0.8); /* Transparent effect */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 255, 128, 0.2);
+    width: 450px;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px); /* Smooth blur effect */
+}
+
+.edit-container h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #00ff99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit-container h2 i {
+    font-size: 1.5rem;
+    color: #00ffcc;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    position: relative;
+}
+
+label {
+    font-size: 14px;
+    margin-top: 12px;
+    font-weight: bold;
+    text-align: left;
+    color: #a7f3d0;
+}
+
+input, select {
+    background: rgba(255, 255, 255, 0.1); /* Transparent input */
+    border: 2px solid transparent;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 5px;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+    width: 100%;
+    backdrop-filter: blur(5px);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #00ff99;
+    box-shadow: 0 0 10px #00ff99;
+}
+
+select {
+    cursor: pointer;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px;
+    background: linear-gradient(135deg, #00ff99, #008f5e);
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #008f5e, #00ff99);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 255, 128, 0.5);
+}

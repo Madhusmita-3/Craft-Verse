@@ -204,7 +204,7 @@ body {
 
 #planner-calender .items img {
   border-radius: 50px 0 50px 0;
-  width: 100rem;
+  width: 18rem;
   height: auto;
   transition: all 0.5s;
 }
@@ -260,7 +260,7 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   transition: transform 0.3s, box-shadow 0.3s;
-
+  
   width: 100%;
 }
 
@@ -407,5 +407,5 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin: 1.5rem 0;
+  margin: 1.5rem 0;
 }

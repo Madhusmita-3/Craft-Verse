@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craft-Verse</title>
+    <link rel="stylesheet" href="/style/admin/edit.css">
+</head>
+
+<body>
+    <div class="edit-container">
+        <h2><i class="fas fa-edit"></i> Edit Category</h2>
+        <form>
+            <label for="category-name">Category Name</label>
+            <input type="text" data-th-value="${category.categoryTitle}" placeholder="Enter category name">
+
+            <label for="category-description">Category Description</label>
+            <input type="text" data-th-value="${category.categoryDescription}" placeholder="Enter description">
+
+            <label for="category-image">Category Image URL</label>
+            <input type="text" data-th-value="${category.categoryImageUrl}" placeholder="Enter image URL">
+
+            <label for="category-status">Category Status</label>
+            <select name="categoryStatus" id="categoryStatus" data-th-field="${category.categoryStatus}">
+                <option value="ACTIVE">ACTIVE</option>
+                <option value="INACTIVE">INACTIVE</option>
+            </select>
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+ 
+
+</body>
+
+</html>

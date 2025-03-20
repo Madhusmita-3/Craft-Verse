@@ -1,5 +1,6 @@
 package edu.rims.craft_verse.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.rims.craft_verse.constant.WidgetStatus;
@@ -13,19 +14,40 @@ import lombok.Setter;
 @Getter
 public class Widget extends Auditable {
     @Id
-    @Column(name = "widget_id" ,nullable = false, length = 255)
+    @Column(name = "widget_id", nullable = false, length = 255)
     @GeneratedValue(strategy = GenerationType.UUID)
     private String widgetId;
 
-    @Column(name = "widget_name" ,nullable = false, length = 100)
+    @Column(name = "widget_name", nullable = false, length = 100)
     private String widgetName;
 
     @Enumerated(EnumType.STRING)
-    private  WidgetStatus widgetstatus =WidgetStatus.ACTIVE;
+    private WidgetStatus widgetStatus = WidgetStatus.ACTIVE;
 
-    @ManyToMany
-    @JoinTable(name = "widget_product", joinColumns = @JoinColumn(name="widget_id"), inverseJoinColumns= @JoinColumn(name = "product_id"))
+    @Column(name = "sequence")
+    private Integer sequence;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "widget_product", joinColumns = @JoinColumn(name = "widget_id"), inverseJoinColumns = @JoinColumn(name = "product_id"))
     private List<Product> products;
 
-    
+    public void addProduct(Product product) {
+        if (product == null) {
+            products = new ArrayList<>();
+
+        }
+        product.addWidget(this);
+        products.add(product);
+    }
+
+    public void removeProduct(String productId) {
+        for (Product product : products) {
+            if (product.getProductId().equals(productId)) {
+                product.removeWidget(this);
+                products.remove(product);
+                break;
+            }
+        }
+    }
+
 }
