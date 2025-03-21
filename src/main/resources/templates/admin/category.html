@@ -40,7 +40,8 @@
                     <td>Enable</td>
                     <!-- <td class="actions"> -->
                         <td><button class="delete-btn" onclick="deleteCategory(this)"><i class="fa fa-trash"></i> Delete</button></td>
-                        <td><button class="edit-btn" onclick="editCategory(this)"><i class="fa fa-edit"></i> Edit</button></td>
+                        <td><button class="edit-btn" data-th-onclick="openModal([[${category.categoryId}]])"><i class="fa fa-edit"></i> Edit</button></td>
+                        
 
                     </td>
                 </tr>

@@ -27,6 +27,7 @@ import org.springframework.web.multipart.MultipartFile;
 import edu.rims.craft_verse.constant.CategoryStatus;
 import edu.rims.craft_verse.constant.ProductStatus;
 import edu.rims.craft_verse.constant.WidgetStatus;
+import edu.rims.craft_verse.dto.CategoryReponseDTO;
 import edu.rims.craft_verse.dto.ProductReponseDTO;
 import edu.rims.craft_verse.dto.ProductReponseDTO.CategoryResponse;
 import edu.rims.craft_verse.entity.Category;
@@ -299,6 +300,20 @@ public class AdminController {
         category.setCategoryTitle(product.getCategory().getCategoryTitle());
         dto.setCategory(category);
 
+        return dto;
+    }
+
+    @GetMapping("/categories/{categoryId}")
+    @ResponseBody
+    public CategoryReponseDTO getCategory(@PathVariable String categoryId){
+        Category category = categoryRepository.findById(categoryId).orElseThrow();
+        CategoryReponseDTO dto = new CategoryReponseDTO();
+        dto.setCategoryId(categoryId);
+        dto.setCategoryTitle(category.getCategoryTitle());
+        dto.setCategoryDescription(category.getCategoryDescription());
+        dto.setCategoryImageUrl(category.getCategoryImageUrl());
+        dto.setCategoryHoverImageUrl(category.getCategoryHoverImageUrl());
+        dto.setCategoryStatus(category.getCategoryStatus().toString());
         return dto;
     }
 }
