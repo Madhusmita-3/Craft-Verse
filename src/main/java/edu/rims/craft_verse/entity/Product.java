@@ -56,4 +56,5 @@ public class Product extends Auditable {
     private List<Wishlist> wishlists;
 
     private String productStatus = ProductStatus.AVAILABLE.toString();
+
 }

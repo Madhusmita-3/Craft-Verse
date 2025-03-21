@@ -7,7 +7,7 @@
 
     <header data-th-replace="~{customer/fragment/common :: header}"></header>
     <nav data-th-replace="~{customer/fragment/common :: nav}"></nav>
-    <main class="product-container">
+    <main class="product-container" data-th-each="product:$(category.product)">
       <section class="product-details">
         <div class="product-images">
           <img src="/images/marker.jpg" alt="marker" class="main-image" />

@@ -42,23 +42,26 @@ public class AdminController {
     private ProductRepository productRepository;
 
     @GetMapping("/dashboard")
-    String admin(){
+    String admin() {
         return "admin/dashboard";
     }
+
     @GetMapping("/order")
-    String adminOrder(){
+    String adminOrder() {
         return "admin/order";
     }
-    
+
     @GetMapping("/category")
-    String category(Model model){
+    String category(Model model) {
         List<Category> categories = categoryRepository.findAll();
         model.addAttribute("categories", categories);
-        return"admin/category";
+        return "admin/category";
     }
+
     @PostMapping("/category")
-    public String categoryAdd(@ModelAttribute Category category, 
-            @RequestParam("categoryImage") MultipartFile file , @RequestParam("categoryHoverImage") MultipartFile file1) throws IOException{
+    public String categoryAdd(@ModelAttribute Category category,
+            @RequestParam("categoryImage") MultipartFile file, @RequestParam("categoryHoverImage") MultipartFile file1)
+            throws IOException {
         if (!file.isEmpty() && !file1.isEmpty()) {
             String originalFilename = file.getOriginalFilename();
             String originalFilename1 = file1.getOriginalFilename();
@@ -74,43 +77,48 @@ public class AdminController {
             fileOutputStream1.close();
             category.setCategoryImageUrl(fileName);
             category.setCategoryHoverImageUrl(fileName1);
-            
+
         }
         categoryRepository.save(category);
         return "redirect:/admin/category";
     }
+
     @PostMapping("/category/remove")
-     public String removecategory(@RequestParam("id") String categoryId){
+    public String removecategory(@RequestParam("id") String categoryId) {
         Category category = categoryRepository.findById(categoryId).orElseThrow();
-        category.setCategoryStatus (CategoryStatus.INACTIVE);
+        category.setCategoryStatus(CategoryStatus.INACTIVE);
         categoryRepository.save(category);
-        return"redirect:/admin/category";
+        return "redirect:/admin/category";
     }
+
     @GetMapping("/category/images/{categoryId}")
     @ResponseBody
-    public byte[] categoryImage(@PathVariable String categoryId) throws IOException{
+    public byte[] categoryImage(@PathVariable String categoryId) throws IOException {
         Category category = categoryRepository.findById(categoryId).orElseThrow();
         FileInputStream fileInputStream = new FileInputStream(category.getCategoryImageUrl());
         return fileInputStream.readAllBytes();
     }
+
     @GetMapping("/category/hoverimages/{categoryId}")
     @ResponseBody
-    public byte[] categoryHoverImage(@PathVariable String categoryId) throws IOException{
+    public byte[] categoryHoverImage(@PathVariable String categoryId) throws IOException {
         Category category = categoryRepository.findById(categoryId).orElseThrow();
         FileInputStream fileInputStream = new FileInputStream(category.getCategoryHoverImageUrl());
         return fileInputStream.readAllBytes();
     }
+
     @GetMapping("/product")
-    String product(Model model){
+    String product(Model model) {
         List<Category> categories = categoryRepository.findAll();
         List<Product> products = productRepository.findAll();
         model.addAttribute("categories", categories);
         model.addAttribute("products", products);
-        return"admin/product";
+        return "admin/product";
     }
+
     @PostMapping("/product")
-    public String productAdd(@ModelAttribute Product product, @RequestParam("productImage")
-             MultipartFile file) throws IOException{
+    public String productAdd(@ModelAttribute Product product, @RequestParam("productImage") MultipartFile file)
+            throws IOException {
         if (!file.isEmpty()) {
             String originalFilename = file.getOriginalFilename();
             String extName = originalFilename.substring(originalFilename.lastIndexOf("."));
@@ -120,32 +128,34 @@ public class AdminController {
             fileOutputStream.write(file.getBytes());
             fileOutputStream.close();
             product.setProductImageUrl(fileName);
-            
+
         }
         productRepository.save(product);
-        return"redirect:/admin/product";
+        return "redirect:/admin/product";
     }
+
     @GetMapping("/product/remove")
-    public String removeProduct(@RequestParam("id") String productId){
-        Product product= productRepository.findById(productId).orElseThrow();
+    public String removeProduct(@RequestParam("id") String productId) {
+        Product product = productRepository.findById(productId).orElseThrow();
         product.setProductStatus(ProductStatus.DISCONTINUED.toString());
         productRepository.save(product);
 
         return "redirect:/admin/product";
     }
+
     @GetMapping("/widget")
-    public String getWidgets(Model model){
+    public String getWidgets(Model model) {
         model.addAttribute("widgets", widgetRepository.findAll());
         return "admin/widget";
     }
 
     @PostMapping("/widget/add")
-    public String postMethodName (@RequestParam String widgetName, @RequestParam String widgetId){
-        Widget widget=new Widget();
+    public String postMethodName(@RequestParam String widgetName, @RequestParam String widgetId) {
+        Widget widget = new Widget();
 
-        if (widget !=null && !widgetId.isEmpty()) {
+        if (widget != null && !widgetId.isEmpty()) {
             widget.setWidgetId(widgetId);
-            
+
         }
         System.out.println("Value of:" + widgetId);
         widget.setWidgetName(widgetName);
@@ -155,15 +165,16 @@ public class AdminController {
     }
 
     @GetMapping("/widget/remove")
-    public String removeWidget(@RequestParam("id") String widgetId){
-        Widget widget= widgetRepository.findById(widgetId).orElseThrow();
+    public String removeWidget(@RequestParam("id") String widgetId) {
+        Widget widget = widgetRepository.findById(widgetId).orElseThrow();
         widget.setWidgetstatus(WidgetStatus.INACTIVE);
         widgetRepository.save(widget);
         return "redirect:/admin/widget";
     }
+
     @GetMapping("/widget/edit")
-    public String editWidget(@RequestParam("id") String widgetId, Model model){
-        Widget widget= widgetRepository.findById(widgetId).orElseThrow();
+    public String editWidget(@RequestParam("id") String widgetId, Model model) {
+        Widget widget = widgetRepository.findById(widgetId).orElseThrow();
         model.addAttribute("widget", widget);
         model.addAttribute("widgets", widgetRepository.findAll());
         return "admin/widget";
@@ -171,7 +182,7 @@ public class AdminController {
 
     @GetMapping("/product/images/{productId}")
     @ResponseBody
-    public byte[] productImage(@PathVariable String productId) throws IOException{
+    public byte[] productImage(@PathVariable String productId) throws IOException {
         Product product = productRepository.findById(productId).orElseThrow();
         FileInputStream fis = new FileInputStream(product.getProductImageUrl());
 
