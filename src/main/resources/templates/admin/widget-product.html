@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head data-th-replace="~{admin/common :: head}"></head>
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<body>
+    <link rel="stylesheet" href="/style/admin/widget.css">
+    <section data-th-replace="~{admin/common :: sidebar}"></section>
+    <section id="content">
+         <nav data-th-replace="~{admin/common :: navbar}"></nav>
+     <main>
+        <section class="dashboard">
+          <div class="title">
+            <i class="fas fa-cogs"></i>
+             <span class="text">Widget product</span>
+          </div>
+
+        <table>
+        <thead>
+            <tr>
+                <th>Widget Name</th>
+                <th>Widget status</th>
+                <th>Product Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="categoryTable">
+            <tr data-th-each="product :${widget.products}">
+                <td data-th-text="${widget.widgetName}"></td>
+                <td data-th-text="${widget.widgetStatus}"
+                    data-th-class="${widget.widgetStatus.name() == 'ACTIVE' ? 'clr-yellow' : 'clr-red'}"></td>
+                <td data-th-text="${product.productTitle}"></td>
+                <td>
+                    <a data-th-href="|/admin/widget/product/remove?widgetId=${widget.widgetId}&productId=${product.productId}|" class="action-link"><i
+                            class="fa-solid fa-trash"></i></a>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</section>
+</main>
+</section>
+
+    <footer data-th-replace="~{admin/common :: footer}"></footer>
+    <script src="/script/product.js"></script>
+ </body> 
+</html>   

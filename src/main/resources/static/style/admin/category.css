@@ -10,7 +10,14 @@ body {
     font-family:  'Brush Script MT';
     /* margin-left: 210px; */
 }
-.container {
+#content main {
+    width: 100%;
+    padding: 36px 24px;
+    font-family: var(--poppins);
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
+}
+/* .container {
     width:77%;
     max-width: 1100px;
     min-width:1000px; 
@@ -21,7 +28,7 @@ body {
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
     margin-left: 315px;
    
-}
+} */
 .category-icon {
     font-size: 28px;
     margin-right: 10px; /* Space between icon and text */

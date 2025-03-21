@@ -31,8 +31,15 @@
             data-th-href="|/customer/category/plp?id=${category.categoryId}|"
             class="item-anchor"
           >
-            <img src="/images/resins.jpg" alt="Resins" id="i-1" />
-            <img src="/images/resin photo.jpg" alt="resin" id="i-2" />
+            <img
+              data-th-src="|/admin/category/images/${category.categoryId}|"
+              id="i-1"
+            />
+            <img
+              data-th-src="|/admin/category/hoverimages/${category.categoryId}|"
+              alt="resin"
+              id="i-2"
+            />
             <p data-th-text="${category.categoryTitle}"></p>
           </a>
         </div>
@@ -58,7 +65,7 @@
       </div>
     </section>
 
-    <section id="Aesthetic-journaling">
+    <!-- <section id="Aesthetic-journaling">
       <div class="aes">
         <h2>Aesthetic Journaling Items</h2>
         <div class="product-grid">
@@ -83,8 +90,8 @@
             <p>Markers</p>
           </div>
         </div>
-      </div>
-      <div class="aes">
+      </div> -->
+    <!-- <div class="aes">
         <h2>Products You'll Love</h2>
         <div class="product-grid">
           <div class="product">
@@ -108,9 +115,9 @@
             <p>Premarked Wall Mirror</p>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div class="aes">
+    <!-- <div class="aes">
         <h2>Our Latest Collection</h2>
         <div class="product-grid">
           <div class="product">
@@ -135,10 +142,10 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="card-container">
-      <h2>Personalized Gifts</h2>
+      <h2>Personlized Gifts!</h2>
       <div id="Personlized">
         <div class="card">
           <img
@@ -173,6 +180,7 @@
         </div>
       </div>
     </section>
+    -->
     <section class="shop-by-price">
       <h1>Shop By Price</h1>
       <div class="price-grid">
