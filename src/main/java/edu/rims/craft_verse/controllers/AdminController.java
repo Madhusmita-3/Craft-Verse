@@ -311,4 +311,22 @@ public class AdminController {
 
         return dto;
     }
+
+
+    @GetMapping("/categories/{categoryId}")
+    @ResponseBody
+    public CategoryReponseDTO getCategory(@PathVariable String categoryId){
+        Category category = categoryRepository.findById(categoryId).orElseThrow();
+        CategoryReponseDTO dto = new CategoryReponseDTO();
+        dto.setCategoryId(categoryId);;
+        dto.setCategoryTitle(category.getCategoryTitle());
+        dto.setCategoryDescription(category.getCategoryDescription());
+        dto.setCategoryImageUrl(category.getCategoryImageUrl());
+        dto.setCategoryHoverImageUrl(category.getCategoryHoverImageUrl());
+        dto.setCategoryStatus(category.getCategoryStatus().toString());
+        return dto;
+    }
 }
+
+}
+
