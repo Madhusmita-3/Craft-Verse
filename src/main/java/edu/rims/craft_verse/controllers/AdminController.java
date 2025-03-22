@@ -142,7 +142,8 @@ public class AdminController {
     public String productAdd(@ModelAttribute Product product, @RequestParam("productImage") MultipartFile file,
             @RequestParam(required = false) String imageUrl)
             throws IOException {
-
+        String productId = product.getProductId();
+        product.setProductId(productId == null || productId.isEmpty()? null: productId);
         if (imageUrl != null) {
             product.setProductImageUrl(imageUrl);
         }
@@ -318,7 +319,7 @@ public class AdminController {
     public CategoryReponseDTO getCategory(@PathVariable String categoryId){
         Category category = categoryRepository.findById(categoryId).orElseThrow();
         CategoryReponseDTO dto = new CategoryReponseDTO();
-        dto.setCategoryId(categoryId);;
+        dto.setCategoryId(categoryId);
         dto.setCategoryTitle(category.getCategoryTitle());
         dto.setCategoryDescription(category.getCategoryDescription());
         dto.setCategoryImageUrl(category.getCategoryImageUrl());
@@ -328,5 +329,5 @@ public class AdminController {
     }
 }
 
-}
+
 
