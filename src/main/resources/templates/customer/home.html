@@ -46,35 +46,7 @@
       </div>
     </section>
 
-    <th:block th:each="widget : ${widgets}" th:switch="${widget.widgetName}">
-      <th:block th:case="'2025 Planner and Calender'">
-        <section
-          th:replace="customer/fragment/home.common :: plannerCalender(${widget.products})"
-        ></section>
-      </th:block>
-      <th:block th:case="'Aesthetic Journaling Items'">
-        <section
-          th:replace="customer/fragment/home.common :: aestheticJournaling(${widget.products})"
-        ></section>
-      </th:block>
-      <th:block th:case="|Products You'll Love|">
-        <section
-          th:replace="customer/fragment/home.common :: productsYoullLove(${widget.products})"
-        ></section>
-      </th:block>
-      <th:block th:case="'Our Latest Collection'">
-        <section
-          th:replace="customer/fragment/home.common :: ourLatestCollection(${widget.products})"
-        ></section>
-      </th:block>
-      <th:block th:case="'Personalized Gifts'">
-        <section
-          th:replace="customer/fragment/home.common :: personalizedGifts(${widget.products})"
-        ></section>
-      </th:block>
-    </th:block>
-
-    <!-- <section id="planner-calender">
+    <section id="planner-calender">
       <h2>2025 Planner and Calender</h2>
       <div class="box">
         <div class="items" id="items-2">
@@ -91,7 +63,7 @@
           <img src="/images/calenderss.jpg" alt=" Calender" />
         </div>
       </div>
-    </section> -->
+    </section>
 
     <!-- <section id="Aesthetic-journaling">
       <div class="aes">
@@ -172,7 +144,7 @@
       </div>
     </section> -->
 
-    <!-- <section class="card-container">
+    <section class="card-container">
       <h2>Personlized Gifts!</h2>
       <div id="Personlized">
         <div class="card">
@@ -207,7 +179,8 @@
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
+    -->
     <section class="shop-by-price">
       <h1>Shop By Price</h1>
       <div class="price-grid">

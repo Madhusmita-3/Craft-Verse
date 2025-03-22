@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -108,7 +107,12 @@ public class AdminController {
     @ResponseBody
     public byte[] categoryImage(@PathVariable String categoryId) throws IOException {
         Category category = categoryRepository.findById(categoryId).orElseThrow();
-        FileInputStream fileInputStream = new FileInputStream(category.getCategoryImageUrl());
+        String imageName = category.getCategoryImageUrl();
+
+        if (imageName == null || imageName.startsWith("http")) {
+            return null;
+        }
+        FileInputStream fileInputStream = new FileInputStream(imageName);
         return fileInputStream.readAllBytes();
     }
 
@@ -116,7 +120,12 @@ public class AdminController {
     @ResponseBody
     public byte[] categoryHoverImage(@PathVariable String categoryId) throws IOException {
         Category category = categoryRepository.findById(categoryId).orElseThrow();
-        FileInputStream fileInputStream = new FileInputStream(category.getCategoryHoverImageUrl());
+        String imageName = category.getCategoryHoverImageUrl();
+
+        if (imageName == null || imageName.startsWith("http")) {
+            return null;
+        }
+        FileInputStream fileInputStream = new FileInputStream(imageName);
         return fileInputStream.readAllBytes();
     }
 
@@ -149,7 +158,7 @@ public class AdminController {
             product.setProductImageUrl(fileName);
 
         }
-        
+
         productRepository.save(product);
         return "redirect:/admin/product";
     }
@@ -294,7 +303,7 @@ public class AdminController {
         dto.setProductStatus(product.getProductStatus());
         dto.setProductStockQuantity(product.getProductStockQuantity());
         dto.setProductImageUrl(product.getProductImageUrl());
-        
+
         CategoryResponse category = dto.new CategoryResponse();
         category.setCategoryId(product.getCategory().getCategoryId());
         category.setCategoryTitle(product.getCategory().getCategoryTitle());
@@ -302,6 +311,7 @@ public class AdminController {
 
         return dto;
     }
+
 
     @GetMapping("/categories/{categoryId}")
     @ResponseBody
@@ -317,3 +327,6 @@ public class AdminController {
         return dto;
     }
 }
+
+}
+

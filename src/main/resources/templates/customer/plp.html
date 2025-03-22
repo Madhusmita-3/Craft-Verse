@@ -1,109 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head data-th-replace="~{customer/fragment/common :: head}"></head>
+  <head data-th-replace="~{customer/fragment/common :: head}"></head>
 
-<body>
-    <link rel="stylesheet" href="/style/customer/plp.css">
+  <body>
+    <link rel="stylesheet" href="/style/customer/plp.css" />
 
     <header data-th-replace="~{customer/fragment/common :: header}"></header>
     <nav data-th-replace="~{customer/fragment/common :: nav}"></nav>
-    
-    <div class="banner">
-  </div>
+
+    <div class="banner"></div>
 
     <!-- Lower Part -->
     <div class="lower-part">
       <aside class="filters">
-        
         <div class="sort-container">
           <label for="sort">Sort by Feature</label>
           <select id="sort">
-              <option value="popularity">Popularity</option>
-              <option value="newest">Newest</option>
-              <option value="rating">Top Rated</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
+            <option value="popularity">Popularity</option>
+            <option value="newest">Newest</option>
+            <option value="rating">Top Rated</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
           </select>
-      </div>
-      
+        </div>
+
         <div class="availability-container">
           <h3>Availability</h3>
           <label class="custom-checkbox">
-              <input type="checkbox" checked>
-              <span class="checkmark"></span>
-              In Stock <span class="count">(22)</span>
+            <input type="checkbox" checked />
+            <span class="checkmark"></span>
+            In Stock <span class="count">(22)</span>
           </label>
           <label class="custom-checkbox">
-              <input type="checkbox">
-              <span class="checkmark"></span>
-              Out of Stock <span class="count">(3)</span>
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            Out of Stock <span class="count">(3)</span>
           </label>
-      </div>
-      
+        </div>
+
         <div class="price-filter">
           <label for="minPrice">Price</label>
           <div class="price-inputs">
-              <input type="number" id="minPrice" value="0" min="0" max="1350" step="10">
-              <span> - </span>
-              <input type="number" id="maxPrice" value="1350" min="0" max="1350" step="10">
+            <input
+              type="number"
+              id="minPrice"
+              value="0"
+              min="0"
+              max="1350"
+              step="10"
+            />
+            <span> - </span>
+            <input
+              type="number"
+              id="maxPrice"
+              value="1350"
+              min="0"
+              max="1350"
+              step="10"
+            />
           </div>
-      </div>
-      
+        </div>
+
         <h3>Brand</h3>
-    <label class="brand-option">
-        <input type="checkbox" name="brand" value="Cello"> Cello
-    </label>
-    <label class="brand-option">
-        <input type="checkbox" name="brand" value="Doms"> Doms
-    </label>
-    <label class="brand-option">
-        <input type="checkbox" name="brand" value="Faber-Castell"> Faber-Castell
-    </label>
+        <label class="brand-option">
+          <input type="checkbox" name="brand" value="Cello" /> Cello
+        </label>
+        <label class="brand-option">
+          <input type="checkbox" name="brand" value="Doms" /> Doms
+        </label>
+        <label class="brand-option">
+          <input type="checkbox" name="brand" value="Faber-Castell" />
+          Faber-Castell
+        </label>
       </aside>
 
-      <section class="products">
+      <div class="products" data-th-if="${param.id != null}">
         <h2 data-th-text="|Matching items for ${category.categoryTitle}|"></h2>
 
-        <div class="product-container" data-th-each="product:${category.products}">
+        <div
+          class="product-container"
+          data-th-each="product:${category.products}"
+        >
+          <img src="/images/acrylic marker.jpg" alt="acrylic marker" />
 
-          <img src="/images/acrylic marker.jpg" alt="acrylic marker">
-
-          <div class="product-title"> 
+          <div class="product-title">
             <h3 data-th-text="${product.productTitle}"></h3>
           </div>
           <div class="product-price">
             <h4 data-th-text="|&#8377; ${product.productPrice}|"></h4>
           </div>
-          <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 -960 960 960" width="2rem" fill="#1f1f1f"><path d="M286.79-81Q257-81 236-102.21t-21-51Q215-183 236.21-204t51-21Q317-225 338-203.79t21 51Q359-123 337.79-102t-51 21Zm400 0Q657-81 636-102.21t-21-51Q615-183 636.21-204t51-21Q717-225 738-203.79t21 51Q759-123 737.79-102t-51 21ZM235-741l110 228h288l125-228H235Zm-30-60h589.07q22.97 0 34.95 21 11.98 21-.02 42L694-495q-11 19-28.56 30.5T627-453H324l-56 104h491v60H277q-42 0-60.5-28t.5-63l64-118-152-322H51v-60h117l37 79Zm140 288h288-288Z"/></svg></button>
-          </div> 
+          <button class="add-to-cart">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="2rem"
+              viewBox="0 -960 960 960"
+              width="2rem"
+              fill="#1f1f1f"
+            >
+              <path
+                d="M286.79-81Q257-81 236-102.21t-21-51Q215-183 236.21-204t51-21Q317-225 338-203.79t21 51Q359-123 337.79-102t-51 21Zm400 0Q657-81 636-102.21t-21-51Q615-183 636.21-204t51-21Q717-225 738-203.79t21 51Q759-123 737.79-102t-51 21ZM235-741l110 228h288l125-228H235Zm-30-60h589.07q22.97 0 34.95 21 11.98 21-.02 42L694-495q-11 19-28.56 30.5T627-453H324l-56 104h491v60H277q-42 0-60.5-28t.5-63l64-118-152-322H51v-60h117l37 79Zm140 288h288-288Z"
+              />
+            </svg>
+          </button>
+        </div>
 
-
-      <!-- <div class="product-container">
-        <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
-        <div class="product-title">Ivory Pearl Irma</div>
-        <div class="product-price">₹580.30</div>
-        <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 -960 960 960" width="2rem" fill="#1f1f1f"><path d="M286.79-81Q257-81 236-102.21t-21-51Q215-183 236.21-204t51-21Q317-225 338-203.79t21 51Q359-123 337.79-102t-51 21Zm400 0Q657-81 636-102.21t-21-51Q615-183 636.21-204t51-21Q717-225 738-203.79t21 51Q759-123 737.79-102t-51 21ZM235-741l110 228h288l125-228H235Zm-30-60h589.07q22.97 0 34.95 21 11.98 21-.02 42L694-495q-11 19-28.56 30.5T627-453H324l-56 104h491v60H277q-42 0-60.5-28t.5-63l64-118-152-322H51v-60h117l37 79Zm140 288h288-288Z"/></svg></button>
+        <div data-th-if="${#lists.size(category.products) == 0}">
+          <h2>No Product Available</h2>
+        </div>
       </div>
 
+      <div class="products" data-th-if="${param.search!= null}">
+        <h2 data-th-text="|Matching items for ${param.search}|"></h2>
 
-      <div class="product-container">
-        <img src="/images/Guangbo Acrylic Marker.jpg" alt="Guangbo Acrylic Marker">
-        <div class="product-title">Fairy Garden Ellis</div>
-        <div class="product-price">₹580.30</div>
-        <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 -960 960 960" width="2rem" fill="#1f1f1f"><path d="M286.79-81Q257-81 236-102.21t-21-51Q215-183 236.21-204t51-21Q317-225 338-203.79t21 51Q359-123 337.79-102t-51 21Zm400 0Q657-81 636-102.21t-21-51Q615-183 636.21-204t51-21Q717-225 738-203.79t21 51Q759-123 737.79-102t-51 21ZM235-741l110 228h288l125-228H235Zm-30-60h589.07q22.97 0 34.95 21 11.98 21-.02 42L694-495q-11 19-28.56 30.5T627-453H324l-56 104h491v60H277q-42 0-60.5-28t.5-63l64-118-152-322H51v-60h117l37 79Zm140 288h288-288Z"/></svg></button>
+        <div class="product-container" data-th-each="product:${products}">
+          <img src="/images/acrylic marker.jpg" alt="acrylic marker" />
+
+          <div class="product-title">
+            <h3 data-th-text="${product.productTitle}"></h3>
+          </div>
+          <div class="product-price">
+            <h4 data-th-text="|&#8377; ${product.productPrice}|"></h4>
+          </div>
+          <button class="add-to-cart">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="2rem"
+              viewBox="0 -960 960 960"
+              width="2rem"
+              fill="#1f1f1f"
+            >
+              <path
+                d="M286.79-81Q257-81 236-102.21t-21-51Q215-183 236.21-204t51-21Q317-225 338-203.79t21 51Q359-123 337.79-102t-51 21Zm400 0Q657-81 636-102.21t-21-51Q615-183 636.21-204t51-21Q717-225 738-203.79t21 51Q759-123 737.79-102t-51 21ZM235-741l110 228h288l125-228H235Zm-30-60h589.07q22.97 0 34.95 21 11.98 21-.02 42L694-495q-11 19-28.56 30.5T627-453H324l-56 104h491v60H277q-42 0-60.5-28t.5-63l64-118-152-322H51v-60h117l37 79Zm140 288h288-288Z"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
-
-
-    <div class="product-container">
-      <img src="/images/Sonic Official Acrylic Marker.jpg" alt="Sonic Official Acrylic Marker">
-      <div class="product-title">Ivory Pearl Brigitta</div>
-      <div class="product-price">₹850.00</div>
-      <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 -960 960 960" width="2rem" fill="#1f1f1f"><path d="M286.79-81Q257-81 236-102.21t-21-51Q215-183 236.21-204t51-21Q317-225 338-203.79t21 51Q359-123 337.79-102t-51 21Zm400 0Q657-81 636-102.21t-21-51Q615-183 636.21-204t51-21Q717-225 738-203.79t21 51Q759-123 737.79-102t-51 21ZM235-741l110 228h288l125-228H235Zm-30-60h589.07q22.97 0 34.95 21 11.98 21-.02 42L694-495q-11 19-28.56 30.5T627-453H324l-56 104h491v60H277q-42 0-60.5-28t.5-63l64-118-152-322H51v-60h117l37 79Zm140 288h288-288Z"/></svg></button>
-  </div> -->
-  
-</section>
- </div>
- </div>
-  <footer data-th-replace="~{customer/fragment/common :: footer}"></footer>
-</body>
+    </div>
+    <footer data-th-replace="~{customer/fragment/common :: footer}"></footer>
+  </body>
 </html>
