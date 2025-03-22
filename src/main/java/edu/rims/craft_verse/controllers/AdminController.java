@@ -308,7 +308,7 @@ public class AdminController {
     public CategoryReponseDTO getCategory(@PathVariable String categoryId){
         Category category = categoryRepository.findById(categoryId).orElseThrow();
         CategoryReponseDTO dto = new CategoryReponseDTO();
-        dto.setCategoryId(categoryId);
+        dto.setCategoryId(categoryId);;
         dto.setCategoryTitle(category.getCategoryTitle());
         dto.setCategoryDescription(category.getCategoryDescription());
         dto.setCategoryImageUrl(category.getCategoryImageUrl());
