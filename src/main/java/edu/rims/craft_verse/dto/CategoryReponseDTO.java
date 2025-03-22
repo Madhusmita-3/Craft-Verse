@@ -14,5 +14,4 @@ public class CategoryReponseDTO {
     private String categoryHoverImageUrl;
     private String categoryStatus;
 
-    
 }

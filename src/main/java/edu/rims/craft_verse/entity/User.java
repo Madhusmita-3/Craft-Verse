@@ -2,6 +2,7 @@ package edu.rims.craft_verse.entity;
 
 import java.util.List;
 
+import edu.rims.craft_verse.constant.UserRole;
 import edu.rims.craft_verse.constant.UserStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -51,4 +52,6 @@ public class User extends Auditable {
 
     @OneToMany(mappedBy = "user")
     private List<ProductOrder> productOrders;
+
+    private UserRole userRole = UserRole.CUSTOMER;
 }
