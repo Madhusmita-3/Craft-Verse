@@ -51,13 +51,12 @@ public class ProductController {
         return "customer/plp";
     }
 
-    // @GetMapping("/pdp")
-    // String getProductBYProducyId(@RequestParam("product") String productId, Model
-    // model) {
-    // Product product = ProductRepository.findById(productId).orElseThrow();
-    // model.addattribute("product", product);
-    // return "customer/pdp";
-    // }
+    @GetMapping("/pdp")
+    String getProductBYProducyId(@RequestParam("product") String productId, Model model) {
+        Product product = productRepository.findById(productId).orElseThrow();
+        model.addAttribute("product", product);
+        return "customer/pdp";
+    }
 
     @GetMapping("/customer/signup")
     String customerSignup() {

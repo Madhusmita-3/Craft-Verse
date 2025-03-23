@@ -18,7 +18,7 @@
       </div>
       <!-- Signup Page -->
       <div class="b">
-        <form action="/customer/sign-up" class="frm" method="post">
+        <form action="/customerLogin/sign-up" class="frm" method="post">
           <h2 class="title">SIGN UP</h2>
           <input
             type="text"
@@ -53,6 +53,7 @@
             required
           />
 
+          <input type="hidden" name="_csrf" data-th-value="${_csrf.token}" />
           <input type="submit" value="SIGN UP" id="btn" />
           <label for="chk2" id="btm">LOGIN HERE</label>
         </form>
@@ -60,10 +61,21 @@
 
       <!-- Login Page -->
       <div class="c">
-        <form action="" class="frm">
+        <form action="/customerLogin/login" class="frm" method="post">
           <h2 class="title">LOGIN</h2>
-          <input type="text" placeholder="Username or Email" required />
-          <input type="password" placeholder="Enter Password" required />
+          <input
+            type="text"
+            name="username"
+            placeholder="Username or Email"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter Password"
+            required
+          />
+          <input type="hidden" name="_csrf" data-th-value="${_csrf.token}" />
           <input type="submit" value="LOGIN" id="btn" />
           <label for="chkl" id="btm">SIGN UP HERE</label>
         </form>

@@ -53,5 +53,6 @@ public class User extends Auditable {
     @OneToMany(mappedBy = "user")
     private List<ProductOrder> productOrders;
 
+    @Enumerated(EnumType.STRING)
     private UserRole userRole = UserRole.CUSTOMER;
 }

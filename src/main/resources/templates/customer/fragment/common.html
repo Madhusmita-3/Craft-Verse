@@ -34,35 +34,26 @@
 
       <div class="icons">
         <div>
-          <a href="/customer/login" target="_blank">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="34px"
-              viewBox="0 0 24 24"
-              width="34px"
-              fill="#e8eaed"
-            >
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08s5.97 1.09 6 3.08C16.71 17.72 14.5 19 12 19z"
-              />
-            </svg>
-          </a>
+          <span data-sec-authorize="!isAuthenticated()">
+            <a href="/customer/login">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="34px"
+                viewBox="0 0 24 24"
+                width="34px"
+                fill="#e8eaed"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08s5.97 1.09 6 3.08C16.71 17.72 14.5 19 12 19z"
+                />
+              </svg>
+            </a>
+          </span>
+          <!-- <span data-sec-authorize="isAuthenticated()"> -->
+
+          <!-- </span> -->
         </div>
-        <div>
-          <a href="https://your-link-here.com" target="_blank">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="34px"
-              viewBox="0 -960 960 960"
-              width="44px"
-              fill="#e8eaed"
-            >
-              <path
-                d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"
-              />
-            </svg>
-          </a>
-        </div>
+
         <div>
           <a href="/customer/cart" target="_blank">
             <svg
@@ -77,6 +68,24 @@
               />
             </svg>
           </a>
+        </div>
+        <div>
+          <form action="/logout" method="post">
+            <input type="hidden" name="_csrf" data-th-value="${_csrf.token}" />
+            <button type="submit">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="40px"
+                viewBox="0 -960 960 960"
+                width="40px"
+                fill="#EFEFEF"
+              >
+                <path
+                  d="M186.67-120q-27 0-46.84-19.83Q120-159.67 120-186.67v-586.66q0-27 19.83-46.84Q159.67-840 186.67-840h292.66v66.67H186.67v586.66h292.66V-120H186.67Zm470.66-176.67-47-48 102-102H360v-66.66h351l-102-102 47-48 184 184-182.67 182.66Z"
+                />
+              </svg>
+            </button>
+          </form>
         </div>
       </div>
     </header>
@@ -97,6 +106,7 @@
             <li><a href="#">Shop</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Contact</a></li>
+            <li><a data-th-href="|/admin/dashboard|">Admin</a></li>
           </ul>
         </div>
         <div class="footer-section">

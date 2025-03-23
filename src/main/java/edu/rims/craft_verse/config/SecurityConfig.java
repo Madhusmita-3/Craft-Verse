@@ -26,14 +26,15 @@ public class SecurityConfig {
         SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
                 http.authorizeHttpRequests(
                                 request -> request
-                                                .requestMatchers("/style/**", "/JavaScript/", "/images/",
-                                                                "/file/*", "/customer/home", "/customer/plp",
-                                                                "/customer/pdp", "/admin/**", "/customer/sign-in",
-                                                                "/customer/sign-up")
+                                                .requestMatchers("/style/**", "/JavaScript/", "/images/**",
+                                                                "/file/*", "/customerLogin/login", "/customer/home",
+                                                                "/customer/plp",
+                                                                "/customer/pdp",
+                                                                "/customerLogin/sign-up", "/customer/category/plp", "/customer/product/search")
                                                 .permitAll()
+                                                .requestMatchers("/admin/**").hasRole(UserRole.ADMIN.toString())
                                                 .anyRequest().authenticated());
-                http.formLogin(form -> form.loginPage("/customer/sign-in")
-                                .successForwardUrl("/customer/home"));
+                http.formLogin(form -> form.loginPage("/customerLogin/login").defaultSuccessUrl("/customer/home"));
                 http.logout(Customizer.withDefaults());
                 return http.build();
         }
