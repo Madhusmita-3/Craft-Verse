@@ -95,7 +95,7 @@ public class AdminController {
         return "redirect:/admin/category";
     }
 
-    @PostMapping("/category/remove")
+    @GetMapping("/category/remove")
     public String removecategory(@RequestParam("id") String categoryId) {
         Category category = categoryRepository.findById(categoryId).orElseThrow();
         category.setCategoryStatus(CategoryStatus.INACTIVE);
