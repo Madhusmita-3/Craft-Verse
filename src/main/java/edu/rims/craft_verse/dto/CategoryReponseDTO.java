@@ -1,6 +1,6 @@
 package edu.rims.craft_verse.dto;
 
-import edu.rims.craft_verse.constant.CategoryStatus;
+
 import lombok.Getter;
 import lombok.Setter;
 

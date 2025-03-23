@@ -95,7 +95,7 @@ public class AdminController {
         return "redirect:/admin/category";
     }
 
-    @PostMapping("/category/remove")
+    @GetMapping("/category/remove")
     public String removecategory(@RequestParam("id") String categoryId) {
         Category category = categoryRepository.findById(categoryId).orElseThrow();
         category.setCategoryStatus(CategoryStatus.INACTIVE);
@@ -142,7 +142,8 @@ public class AdminController {
     public String productAdd(@ModelAttribute Product product, @RequestParam("productImage") MultipartFile file,
             @RequestParam(required = false) String imageUrl)
             throws IOException {
-
+        String productId = product.getProductId();
+        product.setProductId(productId == null || productId.isEmpty() ? null : productId);
         if (imageUrl != null) {
             product.setProductImageUrl(imageUrl);
         }
@@ -314,7 +315,6 @@ public class AdminController {
 
     @GetMapping("/categories/{categoryId}")
     @ResponseBody
-
     public CategoryReponseDTO getCategory(@PathVariable String categoryId) {
         Category category = categoryRepository.findById(categoryId).orElseThrow();
         CategoryReponseDTO dto = new CategoryReponseDTO();

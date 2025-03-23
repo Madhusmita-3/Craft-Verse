@@ -37,9 +37,10 @@
                     <td data-th-text="${category.categoryDescription}"></td>
                     <td> <img data-th-src="|/admin/category/images/${category.categoryId}|" alt="" style="width: 50px;"></td>
                     <td> <img data-th-src="|/admin/category/hoverimages/${category.categoryId}|" alt="" style="width: 50px;"></td>
-                    <td>Enable</td>
+                    <td data-th-text="${category.categoryStatus}"></td>
                     <!-- <td class="actions"> -->
-                        <td><button class="delete-btn" onclick="deleteCategory(this)"><i class="fa fa-trash"></i> Delete</button></td>
+                        <td><a class="delete-btn" data-th-href="|/admin/category/remove?id=${category.categoryId}|"><i class="fa fa-trash"></i> Delete</a></td>
+                        <!-- <td><button class="delete-btn" onclick="deleteCategory(this)"><i class="fa fa-trash"></i> Delete</button></td> -->
                         <td><button class="edit-btn" data-th-onclick="openModal([[${category.categoryId}]])"><i class="fa fa-edit"></i> Edit</button></td>
                         
 
