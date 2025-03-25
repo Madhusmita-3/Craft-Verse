@@ -68,6 +68,7 @@
             <option value="DISCONTINUED">DISCONTINUED</option>
             <option value="OUT_OF_STOCK">OUT_OF_STOCK</option>
         </select>
+        <input type="hidden" name="_csrf" id="" data-th-value="${_csrf.token}">
         <button onclick="saveProduct()">Save</button>
         <button type="button" class="cancel" onclick="closeModal()">Cancel</button>
 

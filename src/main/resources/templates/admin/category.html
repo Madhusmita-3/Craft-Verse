@@ -66,6 +66,7 @@
                 <option value="ACTIVE">Active</option>
                 <option value="INACTIVE">In Active</option>
             </select>
+            <input type="hidden" name="_csrf" id="" data-th-value="${_csrf.token}">
             <button type="submit">Save</button>
             <button class="cancel" onclick="closeModal()">Cancel</button>
         </form>
