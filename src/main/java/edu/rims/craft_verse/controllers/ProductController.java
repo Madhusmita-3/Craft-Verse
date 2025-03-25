@@ -51,7 +51,7 @@ public class ProductController {
         return "customer/plp";
     }
 
-    @GetMapping("/pdp")
+    @GetMapping("/customer/pdp")
     String getProductBYProducyId(@RequestParam("product") String productId, Model model) {
         Product product = productRepository.findById(productId).orElseThrow();
         model.addAttribute("product", product);

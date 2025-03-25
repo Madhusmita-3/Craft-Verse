@@ -1,5 +1,6 @@
 package edu.rims.craft_verse.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.rims.craft_verse.constant.CategoryStatus;
@@ -37,4 +38,12 @@ public class Category extends Auditable {
 
     @OneToMany(mappedBy = "category")
     private List<Product> products;
+
+    public void addProduct(Product product){
+        if(products == null){
+            products = new ArrayList<>();
+        }
+        product.setCategory(this);
+        products.add(product);
+    }
 }

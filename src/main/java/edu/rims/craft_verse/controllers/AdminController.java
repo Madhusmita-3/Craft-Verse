@@ -160,7 +160,10 @@ public class AdminController {
 
         }
 
+        Category category = product.getCategory();
+        category.addProduct(product);
         productRepository.save(product);
+        categoryRepository.save(category);
         return "redirect:/admin/product";
     }
 

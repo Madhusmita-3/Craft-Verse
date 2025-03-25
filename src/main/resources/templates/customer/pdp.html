@@ -7,7 +7,7 @@
 
     <header data-th-replace="~{customer/fragment/common :: header}"></header>
     <nav data-th-replace="~{customer/fragment/common :: nav}"></nav>
-    <main class="product-container" data-th-each="product:$(category.product)">
+    <main class="product-container">
       <section class="product-details">
         <div class="product-images">
           <img src="/images/marker.jpg" alt="marker" class="main-image" />
@@ -18,15 +18,15 @@
           </div>
         </div>
         <div class="product-info">
-          <h1>Acrylic paint Marker</h1>
-          <p class="price">Rs. 250 <span class="old-price">Rs. 500</span></p>
+          <h1 data-th-text="|${product.productTitle}|">Acrylic paint Marker</h1>
+          <p class="price" data-th-text="|${product.productPrice}|">&#8377; 250 <span class="old-price">&#8377; 500</span></p>
           <div class="rating">★★★★☆ 4.6 (69 reviews)</div>
-          <p class="description">
+          <p data-th-text="|${product.productDescription}|" class="description">
             Write the phrase in an elegant calligraphy-style script using gold
             or silver acrylic markers.
           </p>
           <div class="quantity">
-            <label for="qty">Qty:</label>
+            <label for="qty" data-th-text="|${product.productStockQuantity}|">Qty:</label>
             <input type="number" id="qty" value="1" min="1" />
           </div>
           <button class="buy-btn">Buy Now</button>
